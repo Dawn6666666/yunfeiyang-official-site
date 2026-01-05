@@ -2,9 +2,11 @@
   <section ref="heroRef" class="hero" :class="{ 'is-scrolling': isScrolling }">
     <!-- 背景层 -->
     <div class="hero__bg"></div>
+    <!-- 噪点纹理 -->
+    <div class="hero__noise"></div>
 
     <!-- 主内容容器 -->
-    <div class="hero__content">
+    <div class="hero__content" :style="parallaxStyle">
       <!-- 主标题区 -->
       <div class="hero__headline">
         <span class="hero__we" :class="{ animate: isLoaded }">We</span>
@@ -38,19 +40,62 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted, computed } from 'vue'
 
 const heroRef = ref<HTMLElement | null>(null)
 const isLoaded = ref(false)
 const isScrolling = ref(false)
 
-let observer: IntersectionObserver | null = null
+// 视差变量
+const mouseX = ref(0)
+const mouseY = ref(0)
+const isReducedMotion = ref(false)
 
-onMounted(() => {
+let observer: IntersectionObserver | null = null
+let animationFrameId: number | null = null
+
+// 视差计算样式
+const parallaxStyle = computed(() => {
+  if (isReducedMotion.value || isScrolling.value) return {}
+  const rotateX = mouseY.value * -2 // 最大旋转角度
+  const rotateY = mouseX.value * 2
+  return {
+    transform: `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`
+  }
+})
+
+// 处理鼠标移动
+const handleMouseMove = (e: MouseEvent) => {
+  if (isReducedMotion.value || isScrolling.value) return
+  
+  const { innerWidth, innerHeight } = window
+  // 归一化坐标 (-1 到 1)
+  mouseX.value = (e.clientX / innerWidth) * 2 - 1
+  mouseY.value = (e.clientY / innerHeight) * 2 - 1
+}
+
+onMounted(async () => {
+  // 检测减弱动画偏好
+  const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
+  isReducedMotion.value = mediaQuery.matches
+  mediaQuery.addEventListener('change', (e) => isReducedMotion.value = e.matches)
+
+  // 等待字体加载完成，避免 FOUT
+  if (document.fonts) {
+    try {
+      await document.fonts.ready
+    } catch (e) {
+      console.warn('Font loading check skipped', e)
+    }
+  }
+
   // 触发入场动画
   requestAnimationFrame(() => {
     isLoaded.value = true
   })
+
+  // 绑定鼠标事件
+  window.addEventListener('mousemove', handleMouseMove)
 
   // 设置 Intersection Observer 监测滚动状态
   if (heroRef.value) {
@@ -70,8 +115,12 @@ onMounted(() => {
 })
 
 onUnmounted(() => {
+  window.removeEventListener('mousemove', handleMouseMove)
   if (observer) {
     observer.disconnect()
+  }
+  if (animationFrameId) {
+    cancelAnimationFrame(animationFrameId)
   }
 })
 </script>
@@ -87,6 +136,17 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   overflow: hidden;
+  perspective: 1000px; /* 为视差准备 */
+}
+
+/* 噪点纹理层 */
+.hero__noise {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
 /* 背景层 - 微妙渐变 */
@@ -100,7 +160,7 @@ onUnmounted(() => {
   z-index: 0;
 }
 
-/* 内容容器 - 非对称布局 */
+/* 内容容器 - 非对称布局 + 视差应用 */
 .hero__content {
   position: relative;
   z-index: 1;
@@ -109,6 +169,8 @@ onUnmounted(() => {
   margin: 0 auto;
   padding: 0 var(--space-lg);
   padding-left: 8vw;
+  transition: transform 0.1s ease-out; /* 平滑视差跟随 */
+  transform-style: preserve-3d;
 }
 
 /* ─────────────────────────────────────────────────────────
@@ -151,8 +213,8 @@ onUnmounted(() => {
   color: transparent;
   -webkit-text-stroke: 2px var(--accent);
   transition:
-    color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-    -webkit-text-stroke 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    color 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+    -webkit-text-stroke 0.7s cubic-bezier(0.4, 0, 0.2, 1);
   transition-delay: 0.2s;
 }
 
