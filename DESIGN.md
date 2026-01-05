@@ -1,0 +1,451 @@
+# 云飞扬社团官网 — 设计理念与结构
+
+---
+
+## 一、整体设计理念
+
+### 1.1 核心定位
+
+> **"一个让人想加入的技术社区入口"**
+
+本站不是信息展示站，而是一次 **情绪驱动的品牌体验**。访客（尤其大一新生）在 5 秒内应感受到：
+
+- **年轻、前沿、有活力**
+- 这里是创造者的圈子，而非课业延伸
+
+### 1.2 视觉策略
+
+| 维度 | 策略 |
+|------|------|
+| **色彩** | 深空背景 `#0B0D12` + 强调蓝 `#4DA3FF`，克制使用高饱和 |
+| **排版** | 超大标题 + 留白呼吸，拒绝信息堆砌 |
+| **动效** | 一次性关键动画，仅用 `transform/opacity`，情绪>炫技 |
+| **差异化** | 明确区别于"高校官网"的机构感，走独立工作室路线 |
+
+### 1.3 情绪曲线
+
+```
+进入 → 惊喜（Hero 冲击）→ 好奇（滚动发现）→ 认同（About 故事）→ 向往（Tech/成就）
+```
+
+---
+
+## 二、页面结构
+
+```
+/
+├── Home          # 沉浸式首页（核心 Hero + 滚动叙事）
+├── About         # 社团故事、文化、指导老师
+├── Tech          # 技术方向：Cloud / AI / Software 成长路径
+└── Achievements  # 成果展示与荣誉墙
+```
+
+### 2.1 页面职责
+
+| 页面 | 一句话定位 | 情绪关键词 |
+|------|-----------|-----------|
+| **Home** | 情绪入口，制造 WOW | 冲击、好奇 |
+| **About** | 回答"你们是谁" | 温度、归属 |
+| **Tech** | 展示技术深度与成长可能 | 专业、向上 |
+| **Achievements** | 证明实力 | 自豪、激励 |
+
+---
+
+## 三、首页（Home）结构
+
+首页采用 **全屏分段滚动叙事**，而非传统栅格堆叠。
+
+### 3.1 模块序列
+
+```
+┌─────────────────────────────────────────┐
+│  Hero（100vh）                          │  ← 情绪起点
+│  "We Code / the Future"                 │
+└─────────────────────────────────────────┘
+           ↓ scroll
+┌─────────────────────────────────────────┐
+│  留白缓冲区（50vh）                      │  ← 情绪换挡
+│  可选微文案                              │
+└─────────────────────────────────────────┘
+           ↓
+┌─────────────────────────────────────────┐
+│  About 预览（引入身份）                  │  ← 故事开场
+└─────────────────────────────────────────┘
+           ↓
+┌─────────────────────────────────────────┐
+│  Tech 方向预览卡片                       │  ← 专业印象
+└─────────────────────────────────────────┘
+           ↓
+┌─────────────────────────────────────────┐
+│  Achievements 精选                       │  ← 信任建立
+└─────────────────────────────────────────┘
+           ↓
+┌─────────────────────────────────────────┐
+│  Footer / CTA                            │
+└─────────────────────────────────────────┘
+```
+
+---
+
+## 四、Hero 区设计概要
+
+### 4.1 布局原则
+
+- **非对称**：主标题偏左或偏右，打破居中惯性
+- **超大字号**：`clamp(4rem, 12vw, 10rem)` 级别
+- **留白优先**：副标题与辅助信息保持视觉距离
+
+### 4.2 文案层级
+
+| 层级 | 内容 | 视觉权重 |
+|------|------|---------|
+| L1 | We Code / the Future | 主视觉锚点 |
+| L2 | Student Tech Community · Est. 2014 | 辅助定位 |
+| L3 | Cloud · AI · Software / Prof. Chen Ke | 次级信息 |
+| L4 | Scroll ↓ | 行为引导 |
+
+### 4.3 动效概念
+
+| 元素 | 动效 | 语义 |
+|------|------|------|
+| **Code** | 描边 stroke → 填充 fill | 从抽象到实现 |
+| **Future** | 遮罩渐显 Reveal（延迟触发） | 愿景正在构建 |
+| **滚动后** | Code 弱化 / Future 微放大 | 焦点迁移 |
+
+---
+
+## 五、配色与字体速查
+
+### 配色 — Midnight Code
+
+```css
+:root {
+  --bg:      #0B0D12;
+  --text:    #F5F7FA;
+  --accent:  #4DA3FF;
+  --muted:   #9AA3B2;
+  --divider: #1A1F2B;
+}
+```
+
+### 字体
+
+| 用途 | 字体 | 字重 |
+|------|------|------|
+| Hero 主标题 | Space Grotesk | 600 / 700 |
+| 正文 / 导航 | Inter | 400 / 500 |
+
+---
+
+## 六、技术约束摘要
+
+| 允许 | 禁止 |
+|------|------|
+| Nuxt 3 / Vue 3 / Vite | Three.js / WebGL / Canvas |
+| Tailwind CSS | ScrollMagic |
+| Intersection Observer | 连续 `window.scroll` 监听 |
+| CSS `transform` / `opacity` | 高频 JS 动画计算 |
+
+---
+
+---
+
+## 七、Hero 区详细动效说明
+
+### 7.1 入场动画时序（Page Load）
+
+整个 Hero 入场动画控制在 **2.5 秒内完成**，避免用户等待焦虑。
+
+```
+时间轴（ms）
+0        400      800      1200     1600     2000     2400
+│─────────│────────│────────│────────│────────│────────│
+│                                                       │
+│  [We]   ─────────────────→ fade-in + slide-up        │
+│         0–400ms, ease-out                             │
+│                                                       │
+│         [Code]  ─────────→ stroke → fill             │
+│                 200–900ms, cubic-bezier              │
+│                                                       │
+│                  [the]   ─→ fade-in                  │
+│                          600–900ms                    │
+│                                                       │
+│                          [Future] ──→ mask-reveal    │
+│                                   800–1500ms          │
+│                                                       │
+│                                    [副标题 + 辅助信息]│
+│                                    1400–1800ms        │
+│                                                       │
+│                                         [Scroll ↓]   │
+│                                         1800–2200ms   │
+│                                         + 呼吸动画    │
+└───────────────────────────────────────────────────────┘
+```
+
+### 7.2 各元素动效细节
+
+#### 7.2.1 "We" — 淡入 + 上滑
+
+| 属性 | 值 |
+|------|-----|
+| 初始状态 | `opacity: 0; transform: translateY(20px)` |
+| 结束状态 | `opacity: 1; transform: translateY(0)` |
+| 时长 | 400ms |
+| 缓动 | `ease-out` |
+| 延迟 | 0ms |
+
+#### 7.2.2 "Code" — 描边填充
+
+| 阶段 | 描述 |
+|------|------|
+| **Phase 1** | 文字以 `stroke` 描边形式出现（`-webkit-text-stroke`） |
+| **Phase 2** | 描边颜色从 `#4DA3FF` 渐变填充为实心 `#F5F7FA` |
+
+```css
+/* 关键帧示意 */
+@keyframes stroke-to-fill {
+  0% {
+    color: transparent;
+    -webkit-text-stroke: 2px var(--accent);
+  }
+  60% {
+    color: transparent;
+    -webkit-text-stroke: 2px var(--accent);
+  }
+  100% {
+    color: var(--text);
+    -webkit-text-stroke: 0px transparent;
+  }
+}
+```
+
+| 属性 | 值 |
+|------|-----|
+| 时长 | 700ms |
+| 缓动 | `cubic-bezier(0.4, 0, 0.2, 1)` |
+| 延迟 | 200ms |
+
+#### 7.2.3 "the" — 简单淡入
+
+| 属性 | 值 |
+|------|-----|
+| 初始状态 | `opacity: 0` |
+| 结束状态 | `opacity: 0.6`（保持次级权重） |
+| 时长 | 300ms |
+| 延迟 | 600ms |
+
+#### 7.2.4 "Future" — 遮罩揭示
+
+| 阶段 | 描述 |
+|------|------|
+| **初始** | 文字被 `clip-path: inset(0 100% 0 0)` 完全遮挡 |
+| **揭示** | `clip-path` 从右向左展开至 `inset(0 0 0 0)` |
+
+```css
+@keyframes mask-reveal {
+  from { clip-path: inset(0 100% 0 0); }
+  to   { clip-path: inset(0 0 0 0); }
+}
+```
+
+| 属性 | 值 |
+|------|-----|
+| 时长 | 700ms |
+| 缓动 | `cubic-bezier(0.22, 1, 0.36, 1)` (easeOutQuint) |
+| 延迟 | 800ms |
+
+#### 7.2.5 副标题 & 辅助信息 — 逐行淡入
+
+| 属性 | 值 |
+|------|-----|
+| 动画 | `opacity: 0 → 1` + `translateY(10px) → 0` |
+| 时长 | 400ms per line |
+| 延迟 | 1400ms（副标题）/ 1600ms（辅助信息） |
+| 交错 | 每行间隔 150ms |
+
+#### 7.2.6 "Scroll ↓" — 淡入 + 呼吸循环
+
+| 阶段 | 描述 |
+|------|------|
+| **入场** | 1800ms 延迟后淡入 |
+| **呼吸** | 入场后开始无限循环 `translateY(0 → 8px → 0)`，周期 2s |
+
+```css
+@keyframes scroll-breathe {
+  0%, 100% { transform: translateY(0); opacity: 1; }
+  50%      { transform: translateY(8px); opacity: 0.6; }
+}
+```
+
+---
+
+### 7.3 滚动交互动效（Scroll → Hero 解构）
+
+当用户开始滚动时，Hero 元素逐步 **解构** 而非突然消失。
+
+#### 触发机制
+
+- 使用 `Intersection Observer` 监测 Hero 容器
+- 当 Hero 可见比例 `< 0.7` 时，添加 `.is-scrolling` class
+
+#### 状态变化
+
+| 元素 | 正常状态 | 滚动状态（.is-scrolling） |
+|------|---------|-------------------------|
+| **"We Code"** | `opacity: 1` | `opacity: 0.3; transform: translateY(-20px)` |
+| **"the"** | `opacity: 0.6` | `opacity: 0` |
+| **"Future"** | `opacity: 1; scale: 1` | `opacity: 1; scale: 1.05` ← 焦点强化 |
+| **副标题** | `opacity: 1` | `opacity: 0` |
+| **Scroll ↓** | 可见 | `opacity: 0` |
+
+```css
+/* 过渡示意 */
+.hero-element {
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.hero.is-scrolling .hero-code {
+  opacity: 0.3;
+  transform: translateY(-20px);
+}
+
+.hero.is-scrolling .hero-future {
+  transform: scale(1.05);
+}
+```
+
+---
+
+## 八、Hero → About 过渡动效说明
+
+### 8.1 叙事目标
+
+```
+Hero（行动 / 宣言）
+       ↓
+   留白缓冲（情绪换挡）
+       ↓
+About（身份 / 归属）
+```
+
+用户从「我们在做什么」平滑过渡到「我们是谁」。
+
+### 8.2 过渡区结构
+
+```
+┌─────────────────────────────────────────┐
+│  Hero 区（100vh）                        │
+│  "We Code the Future"                   │
+└─────────────────────────────────────────┘
+                    │
+                    ▼ scroll
+┌─────────────────────────────────────────┐
+│  留白缓冲区（50vh）                       │
+│                                         │
+│     ┌─────────────────────────────┐     │
+│     │  可选过渡文案（极小字号）     │     │
+│     │  "It started with curiosity."│     │
+│     └─────────────────────────────┘     │
+│                                         │
+└─────────────────────────────────────────┘
+                    │
+                    ▼
+┌─────────────────────────────────────────┐
+│  About 内容区                            │
+│  ┌───────────────────────────────┐      │
+│  │  标题 "About Us"               │ ←先出现│
+│  └───────────────────────────────┘      │
+│  ┌───────────────────────────────┐      │
+│  │  段落 1                        │ ←逐段 │
+│  └───────────────────────────────┘      │
+│  ┌───────────────────────────────┐      │
+│  │  段落 2                        │      │
+│  └───────────────────────────────┘      │
+└─────────────────────────────────────────┘
+```
+
+### 8.3 留白区动效
+
+#### 过渡文案（可选）
+
+| 属性 | 值 |
+|------|-----|
+| 字号 | `0.75rem` / 12px |
+| 颜色 | `var(--muted)` |
+| 触发 | 进入视口 50% 时 |
+| 动画 | `opacity: 0 → 0.8`，400ms |
+
+```
+候选文案（任选其一）：
+• "It started with curiosity."
+• "Everything begins with learning."
+• "Before the future, there was passion."
+```
+
+### 8.4 About 区入场动效
+
+#### 触发机制
+
+每个 About 内容块使用独立的 `Intersection Observer`：
+- `threshold: 0.2`（元素 20% 进入视口时触发）
+- `rootMargin: '0px 0px -50px 0px'`（提前 50px 触发）
+
+#### 动画序列
+
+| 元素 | 动画 | 延迟 |
+|------|------|------|
+| **标题** | `opacity: 0 → 1` + `translateY(30px) → 0` | 0ms |
+| **段落 1** | 同上 | 150ms |
+| **段落 2** | 同上 | 300ms |
+| **段落 N** | 同上 | N × 150ms |
+
+```css
+.about-block {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.about-block.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+```
+
+### 8.5 技术实现要点
+
+| 要求 | 实现方式 |
+|------|---------|
+| 禁止 `window.scroll` 监听 | ✅ 全部使用 `IntersectionObserver` |
+| 仅用 `transform/opacity` | ✅ 无其他 GPU 合成属性 |
+| 单次播放 | ✅ 动画完成后移除 observer |
+| 移动端降级 | ✅ 可通过 `prefers-reduced-motion` 禁用动画 |
+
+```css
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+```
+
+---
+
+## 九、动效速查表
+
+| 模块 | 元素 | 动效类型 | 时长 | 触发 |
+|------|------|---------|------|------|
+| Hero | "We" | fade + slide | 400ms | page load |
+| Hero | "Code" | stroke → fill | 700ms | page load |
+| Hero | "the" | fade | 300ms | page load |
+| Hero | "Future" | mask reveal | 700ms | page load |
+| Hero | "Scroll ↓" | fade + breathe loop | 400ms + ∞ | page load |
+| Hero 滚动 | 整体 | 解构（弱化/强调） | 600ms | IntersectionObserver |
+| 过渡区 | 过渡文案 | fade | 400ms | IntersectionObserver |
+| About | 标题/段落 | fade + slide | 600ms | IntersectionObserver |
+
+---
+
+> **下一步**：可运行的 Nuxt 3 页面与组件代码示例（待确认后输出）
+
