@@ -4,6 +4,7 @@
     <TheTransitionBuffer />
     <TheAbout />
     <TheTech />
+    <TheAchievements />
   </div>
 </template>
 
