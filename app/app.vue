@@ -1,6 +1,7 @@
 <template>
   <div class="app">
     <TheHero />
+    <TheTransitionBuffer />
   </div>
 </template>
 
