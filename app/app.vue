@@ -6,6 +6,7 @@
     <TheAbout />
     <TheTech />
     <TheAchievements />
+    <TheFooter />
   </div>
 </template>
 
