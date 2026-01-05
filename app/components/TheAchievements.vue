@@ -1,5 +1,5 @@
 <template>
-  <section class="achievements-section">
+  <section id="impact" class="achievements-section">
     <div class="achievements__container">
       
       <!-- Section Header -->

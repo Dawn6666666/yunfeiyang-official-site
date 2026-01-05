@@ -1,5 +1,5 @@
 <template>
-  <section ref="heroRef" class="hero" :class="{ 'is-scrolling': isScrolling }">
+  <section id="hero" ref="heroRef" class="hero" :class="{ 'is-scrolling': isScrolling }">
     <!-- 背景层组件 -->
     <HeroBackground />
 

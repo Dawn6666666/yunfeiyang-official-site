@@ -1,5 +1,5 @@
 <template>
-  <section class="tech-section">
+  <section id="tech" class="tech-section">
     <div class="tech__container">
       
       <!-- Section Header -->

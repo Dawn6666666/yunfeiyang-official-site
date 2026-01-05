@@ -1,5 +1,5 @@
 <template>
-  <section class="about-section">
+  <section id="about" class="about-section">
     <div class="about__container">
       
       <!-- L: Section Anchor (Temporarily inline for v1) -->
