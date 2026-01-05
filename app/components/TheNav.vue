@@ -3,7 +3,11 @@
     <div class="nav__container">
       
       <!-- Logo / Home Anchor -->
-      <a href="#hero" class="nav__logo" @click.prevent="scrollTo('#hero')">
+      <a 
+        href="#hero" 
+        class="nav__logo" 
+        @click.prevent="handleLogoClick"
+      >
         YFY
       </a>
 
@@ -22,6 +26,27 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 
 const isScrolled = ref(false)
+const isBlueprintActive = useState('blueprintMode', () => false)
+let clickCount = 0
+let clickTimer: ReturnType<typeof setTimeout> | null = null
+
+const handleLogoClick = () => {
+  // Navigation
+  scrollTo('#hero')
+  
+  // Easter Egg Trigger (5 clicks in 2s)
+  clickCount++
+  if (clickTimer) clearTimeout(clickTimer)
+  
+  clickTimer = setTimeout(() => {
+    clickCount = 0
+  }, 2000)
+
+  if (clickCount >= 5) {
+    isBlueprintActive.value = true
+    clickCount = 0
+  }
+}
 
 const handleScroll = () => {
   isScrolled.value = window.scrollY > 50

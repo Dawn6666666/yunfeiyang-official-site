@@ -809,6 +809,53 @@ Tech 章节展示的是“硬实力”。我们希望通过交互传达：**"看
 2.  **Vue Composable**:
     *   封装 `useScrollReveal()`，统一管理 Intersection Observer 的参数与 Class 切换。
 
-> **下一步**：无需新功能，基于此规范 Review 并重构现有动效参数。
+
+---
+
+## 十七、Visual FX v2.6：视觉实验层
+
+### 17.1 设计原则
+
+- **Independent Layer**: 所有效果必须独立于内容层之外 (Orbiting Layer)。
+- **Non-Destructive**: 移除这些效果的代码，不应影响原有页面结构。
+- **Playful**: 允许一定程度的“张扬”，但必须符合“极客/构建者”气质。
+
+### 17.2 实验方案
+
+#### Experiment A: Syntax Cloud (代码云)
+*   **类型**: Ambient Motion (环境动效)
+*   **区域**: Hero 背景深处 (z-index: 0)。
+*   **视觉**: 漂浮的语法符号 (`{ }`, `[]`, `//`, `=>`, `;`)，低透明度 (0.05)，缓慢沉浮。
+*   **目的**: 强化 "We Code" 的氛围，填充 Hero 的视觉空洞。
+*   **技术**:
+    - Vue `v-for` 生成 15-20 个 `<span>`。
+    - CSS Animation: `float-up-down` (不同的 duration/delay)。
+    - **Remove**: 删除该组件即可。
+
+#### Experiment B: Blueprint Mode (蓝图模式)
+*   **类型**: Easter Egg (彩蛋)
+*   **触发**: 连续点击左上角 Logo 5 次。
+*   **视觉**: 页面瞬间切换为“线框模式”。
+    - 所有元素显示亮色边框 (`outline`).
+    - 背景显示工程网格 (`gradient grid`).
+    - 字体切换为 Monospace。
+*   **目的**: 致敬 "Builders" 精神，展示网页的骨架之美。
+*   **技术**:
+    - Global State `isDebugMode`.
+    - Body class `.mode-blueprint`.
+    - CSS Variables Override (`--bg` -> Blueprint Blue, `--text` -> White).
+
+#### Experiment C: Fluid Scroll / Velocity Skew (液态滚动)
+*   **类型**: Non-blocking VFX (无阻塞特效)
+*   **触发**: 快速滚动页面时。
+*   **视觉**: 页面内容根据滚动速度产生微小的 `skewY` (倾斜)，模拟“风阻”或“液态”感。停止滚动时回弹。
+*   **目的**: 增加滚动的物理反馈和趣味性。
+*   **技术**:
+    - `useScrollVelocity` hook 监听 `deltaY`。
+    - 映射为 CSS Variable `--skew-y` (限制在 +/- 2deg 以内)。
+    - Apply to `#app` or Main Container `transform: skewY(var(--skew-y))`.
+
+> **建议实施顺序**: A -> B -> (C 可选，视性能而定)
+
 
 
