@@ -18,7 +18,7 @@
 
 <style scoped>
 .footer {
-  padding: 10vh 0 5vh;
+  padding: 10vh 0 8vh; /* More bottom space for "landing" feel */
   background-color: var(--bg);
   color: var(--muted);
   font-family: var(--font-mono);

@@ -47,8 +47,8 @@
 .about-section {
   position: relative;
   z-index: 10;
-  padding: 10vh 0 20vh;
-  background-color: var(--bg); /* Ensure background covers hero if needed */
+  padding: 15vh 0; /* Standardized rhythm */
+  background-color: var(--bg);
 }
 
 .about__container {

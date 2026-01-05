@@ -105,7 +105,7 @@
 .tech-section {
   position: relative;
   z-index: 10;
-  padding: 15vh 0;
+  padding: 15vh 0; /* Standardized rhythm */
   background-color: var(--bg);
 }
 
