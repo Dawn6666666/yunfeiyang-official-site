@@ -653,7 +653,62 @@ Achievements 章节承接 Tech 的“能力展示”，负责提供**“现实�
 - 由于只有 3 个锚点，**移动端不折叠汉堡菜单**，直接横向排列，保持从简。
 - 间距适当缩小，确保在一行内放下。
 
-> **下一步**：实现 TheNav 组件，并为各 Section 添加 ID 锚点。
+
+---
+
+## 十四、Hero v2 实验：动效与交互升级
+
+### 14.1 设计理念：Dimensional Fluidity (维度流动)
+
+在 v1 "静止 -> 滚动" 的基础上，v2 引入**“维度感”与“持续响应”**。
+不再只是一个静态封面，而是一个**对鼠标和滚动实时响应的 3D 场域**。
+
+### 14.2 核心动效策略
+
+#### A. 滚动联动 (Scroll-Linked Animation)
+不再使用单一的 `is-scrolling` 开关，而是将滚动进度映射为连续数值。
+
+*   **Deep Parallax (深度视差)**:
+    *   背景层、文字层、噪点层拥有不同的滚动速率。
+    *   "We Code" 与 "The Future" 在滚动时发生 **Z轴分离** 或 **X轴对冲**（例如："We Code" 向左溢出，"The Future" 向右溢出，为内容出现让路）。
+*   **Dynamic Blur (动态模糊)**:
+    *   随着向下滚动，Hero 背景逐渐模糊 (`backdrop-filter`)，聚焦下方内容。
+
+#### B. 鼠标交互 (Mouse Interaction)
+*   **The Spotlight (聚光灯)**:
+    *   在深色背景上，鼠标位置带有一个柔和的径向渐变光斑 (Radial Gradient Mask)，照亮噪点纹理。
+*   **Magnetic Tilt (磁性倾斜)**:
+    *   保留 v1 的 3D 倾斜，但增加**阻尼感 (Damping)**，使运动更像在液体中而非真空中。
+
+#### C. 视觉强化 (Visual Impact)
+*   **Text Masking (文字遮罩)**:
+    *   "Code" 文字不再只是描边，可以尝试**内部流光 (Shimmer)** 或 **混合模式 (Blend Mode)** 叠加动态纹理。
+*   **Glitch Reveal (故障揭示)**:
+    *   入场时，关键文字（Code / Future）带有极短的随机位移或透明度抖动，强化“黑客/极客”属性。
+
+### 14.3 技术实现方案 (No WebGL)
+
+#### 1. 响应式 CSS 变量系统
+在 JS 中监听 `scroll` 和 `mousemove`，实时更新 CSS 变量，将计算交给 CSS 引擎：
+```css
+:root {
+  --mouse-x: 0.5;
+  --mouse-y: 0.5;
+  --scroll-progress: 0; /* 0 to 1 */
+}
+
+.hero__layer {
+  transform: translate3d(0, calc(var(--scroll-progress) * 100px), 0);
+}
+```
+
+#### 2. Performance Refinement (性能优化)
+*   **Throttling**: 使用 `requestAnimationFrame` 限制变量更新频率。
+*   **Will-change**: 仅对变化的图层（Transform/Opacity）声明。
+*   **Passive Listeners**: 确保滚动不被阻塞。
+
+> **下一步**：更新 `TheHero.vue`，引入 CSS 变量驱动的动效系统。
+
 
 
 

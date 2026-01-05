@@ -2,13 +2,14 @@
   <div class="hero-headline-wrapper">
     <!-- 主标题区 -->
     <div class="hero__headline">
-      <span class="hero__we" :class="{ animate: isLoaded, 'is-scrolling': isScrolling }">We</span>
-      <span class="hero__code" :class="{ animate: isLoaded, 'is-scrolling': isScrolling }">Code</span>
+      <span class="hero__we" :class="{ animate: isLoaded }">We</span>
+      <!-- Code: Shimmer Effect Applied -->
+      <span class="hero__code hero__code--shimmer" :class="{ animate: isLoaded }">Code</span>
     </div>
 
     <div class="hero__subline">
-      <span class="hero__the" :class="{ animate: isLoaded, 'is-scrolling': isScrolling }">the</span>
-      <span class="hero__future" :class="{ animate: isLoaded, 'is-scrolling': isScrolling }">Future</span>
+      <span class="hero__the" :class="{ animate: isLoaded }">the</span>
+      <span class="hero__future" :class="{ animate: isLoaded }">Future</span>
     </div>
   </div>
 </template>
@@ -22,7 +23,7 @@ defineProps<{
 
 <style scoped>
 /* ─────────────────────────────────────────────────────────
-   主标题动效
+   主标题动效 (v2 Phase A Update)
    ───────────────────────────────────────────────────────── */
 
 .hero__headline,
@@ -33,15 +34,27 @@ defineProps<{
   font-family: var(--font-display);
   font-weight: 700;
   line-height: 0.95;
+  
+  /* Create layer context for transforms */
+  transform-style: flat;
 }
 
 .hero__headline {
   font-size: clamp(4rem, 12vw, 10rem);
+  
+  /* Scroll Divergence: Move Left */
+  /* Moves -50px when scroll progress is 1 */
+  transform: translate3d(calc(var(--scroll-progress) * -50px), 0, 0);
+  will-change: transform;
 }
 
 .hero__subline {
   font-size: clamp(3.5rem, 10vw, 8rem);
   margin-top: -0.1em;
+
+  /* Scroll Divergence: Move Right */
+  transform: translate3d(calc(var(--scroll-progress) * 50px), 0, 0);
+  will-change: transform;
 }
 
 /* "We" - 淡入 + 上滑 */
@@ -56,70 +69,77 @@ defineProps<{
   transform: translateY(0);
 }
 
-.hero__we.is-scrolling {
-  opacity: 0.3;
-  transform: translateY(-20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-/* "Code" - 描边填充效果 */
+/* "Code" - Shimmer Effect */
 .hero__code {
   color: transparent;
   -webkit-text-stroke: 2px var(--accent);
-  transition:
-    color 0.7s cubic-bezier(0.4, 0, 0.2, 1),
-    -webkit-text-stroke 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-  transition-delay: 0.2s;
+  transition: opacity 0.4s;
+  
+  /* Fallback for no shimmer / pre-load */
+  position: relative;
 }
 
-.hero__code.animate {
-  color: var(--text);
-  -webkit-text-stroke: 0px transparent;
-  transition-delay: 0.5s;
+/* Shimmer Definition */
+.hero__code--shimmer.animate {
+  -webkit-text-stroke: 0px transparent; /* Remove stroke when filled */
+  
+  /* Gradient Flow */
+  background: linear-gradient(
+    110deg, 
+    var(--text) 45%, 
+    #ffffff 50%, 
+    var(--text) 55%
+  );
+  background-size: 250% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  
+  animation: shimmer-flow 3s infinite linear;
 }
 
-.hero__code.is-scrolling {
-  opacity: 0.3;
-  transform: translateY(-20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+@keyframes shimmer-flow {
+  0% { background-position: 100% 0; }
+  100% { background-position: -100% 0; }
 }
 
-/* "the" - 简单淡入 */
+/* "the" - Simple Fade */
 .hero__the {
   opacity: 0;
   font-weight: 400;
   color: var(--muted);
   font-size: 0.5em;
-  transition: opacity 0.3s ease;
-  transition-delay: 0.6s;
+  transition: opacity 0.3s ease 0.6s;
 }
 
 .hero__the.animate {
   opacity: 0.6;
 }
 
-.hero__the.is-scrolling {
-  opacity: 0;
-  transition: opacity 0.6s ease;
-}
-
-/* "Future" - 遮罩揭示 */
+/* "Future" - Mask Reveal */
 .hero__future {
   clip-path: inset(0 100% 0 0);
-  transition: clip-path 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.6s ease;
-  transition-delay: 0.8s;
-  transform-origin: left center;
+  transition: clip-path 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.8s;
 }
 
 .hero__future.animate {
   clip-path: inset(0 0 0 0);
 }
 
-.hero__future.is-scrolling {
-  transform: scale(1.05); /* 焦点强化 */
+/* Reduced Motion Overrides */
+@media (prefers-reduced-motion: reduce) {
+  .hero__headline, 
+  .hero__subline {
+    transform: none !important;
+  }
+  
+  .hero__code--shimmer.animate {
+    animation: none;
+    background: var(--text); /* Solid fill */
+  }
 }
 
-/* 响应式 */
+/* Responsive */
 @media (max-width: 768px) {
   .hero__headline {
     flex-direction: column;
