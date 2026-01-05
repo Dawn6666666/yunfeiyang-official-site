@@ -1,12 +1,12 @@
 <template>
-  <section id="about" class="about-section">
+  <section id="about" class="about-section" ref="sectionRef">
     <div class="about__container">
       
-      <!-- L: Section Anchor (Temporarily inline for v1) -->
-      <h2 class="about__anchor">About.</h2>
+      <!-- L: Section Anchor -->
+      <h2 class="about__anchor reveal">About.</h2>
 
       <!-- R1: The Identity -->
-      <div class="about__block about__block--identity">
+      <div class="about__block about__block--identity reveal">
         <p class="about__display-text">
           Not just a club. <br>
           <span class="highlight">A playground for future builders.</span>
@@ -14,7 +14,7 @@
       </div>
 
       <!-- R2: The Origin -->
-      <div class="about__block about__block--origin">
+      <div class="about__block about__block--origin reveal">
         <p class="about__body-text">
           Founded in 2014 under the guidance of Prof. Chen Ke, 
           we started as a small group of code enthusiasts.
@@ -28,7 +28,7 @@
       </div>
 
       <!-- R3: The Vibe -->
-      <div class="about__block about__block--vibe">
+      <div class="about__block about__block--vibe reveal">
         <ul class="vibe-list">
           <li class="vibe-item">[ Exploration ]</li>
           <li class="vibe-item">[ Growth ]</li>
@@ -42,6 +42,14 @@
     </div>
   </section>
 </template>
+
+<script setup lang="ts">
+import { ref } from 'vue'
+import { useScrollReveal } from '@/composables/useScrollReveal'
+
+const sectionRef = ref(null)
+useScrollReveal(sectionRef)
+</script>
 
 <style scoped>
 .about-section {

@@ -51,7 +51,11 @@ onUnmounted(() => {
   left: 0;
   width: 100%;
   z-index: 100;
-  transition: background-color 0.3s ease, backdrop-filter 0.3s ease, border-bottom-color 0.3s ease;
+  z-index: 100;
+  transition: 
+    background-color var(--duration-hover) var(--ease-power3-out),
+    backdrop-filter var(--duration-hover) var(--ease-power3-out),
+    border-bottom-color var(--duration-hover) var(--ease-power3-out);
   border-bottom: 1px solid transparent;
 }
 

@@ -761,11 +761,54 @@ Tech 章节展示的是“硬实力”。我们希望通过交互传达：**"看
 #### 3. Magnetic Tilt (Optional / Low Priority)
 如果需要更加极致的体验，可以复用 Hero 的 JS 逻辑实现卡片跟随鼠标倾斜，但在 Phase A 建议先用 CSS 3D Lift，**更稳、更轻**。
 
-> **下一步**：无需 JS，纯 CSS 升级 `TheTech.vue`。
 
+---
 
+## 十六、Motion System 2.5：全站动效规范
 
+### 16.1 系统目标
 
+从“散点式动效”进化为“系统化语言”。
+核心原则：**Organic Precision (有机精密)** —— 像精密仪器一样准确，像生物一样自然（有阻尼，非线性）。
 
+### 16.2 规范定义
+
+#### A. Scroll Reveal (卷轴节奏)
+全站统一的元素入场规范（About, Tech, Impact）。
+
+*   **Trigger**: `IntersectionRatio > 0.1` or `Margin -10%`.
+*   **Distance**: `30px` (垂直位移).
+*   **Duration**: `0.8s`.
+*   **Easing**: `cubic-bezier(0.25, 0.46, 0.45, 0.94)` (Quad Out) 或 `cubic-bezier(0.2, 0.8, 0.2, 1)` (Power3 Out).
+*   **Stagger**: `0.1s` (组内元素间隔).
+
+#### B. Hover / Lift Levels (三级悬停)
+根据信息密度定义 Hover 强度。
+
+| Level | 场景 | 动作 (Transform) | 视觉反馈 (Visual) |
+| :--- | :--- | :--- | :--- |
+| **L1 (Micro)** | 链接、按钮 | `translateY(-2px)` | Color Change / Underline |
+| **L2 (Card)** | Tech Card (整体) | `translateZ(10px)` | Shadow / Border Glow |
+| **L3 (Focus)** | Tech Keywords (细节) | `translateZ(30px)` | Bg Pattern Reveal |
+
+#### C. Architecture (JS vs CSS)
+明确动效驱动权的边界，避免冲突。
+
+*   **Macro (宏观场域)**: 由 **JS / Vue** 驱动 CSS Variables.
+    *   场景：Hero Parallax, Global Nav Blur, Section Fade.
+    *   特征：连续数值 (`0.0 - 1.0`)，依赖全局状态 (Scroll/Mouse).
+*   **Micro (微观交互)**: 由 **Pure CSS** 驱动.
+    *   场景：Card Hover, Button Click, Link Hover.
+    *   特征：离散状态 (Hover/Active)，高性能，独立上下文.
+
+### 16.3 实施策略
+
+1.  **CSS Variables**:
+    *   定义全局缓动: `--ease-out-quad: cubic-bezier(...)`.
+    *   定义全局时长: `--duration-base: 0.6s`.
+2.  **Vue Composable**:
+    *   封装 `useScrollReveal()`，统一管理 Intersection Observer 的参数与 Class 切换。
+
+> **下一步**：无需新功能，基于此规范 Review 并重构现有动效参数。
 
 

@@ -1,13 +1,13 @@
 <template>
-  <section id="impact" class="achievements-section">
+  <section id="impact" class="achievements-section" ref="sectionRef">
     <div class="achievements__container">
       
       <!-- Section Header -->
-      <header class="achievements__header">
+      <header class="achievements__header reveal">
         <h2 class="achievements__title">Impact.</h2>
       </header>
       
-      <div class="impact-grid">
+      <div class="impact-grid reveal-stagger">
         
         <!-- Dimension 1: The Peaks -->
         <div class="impact-col impact-col--peaks">
@@ -74,6 +74,14 @@
     </div>
   </section>
 </template>
+
+<script setup lang="ts">
+import { ref } from 'vue'
+import { useScrollReveal } from '@/composables/useScrollReveal'
+
+const sectionRef = ref(null)
+useScrollReveal(sectionRef)
+</script>
 
 <style scoped>
 .achievements-section {
@@ -158,6 +166,7 @@
 
 .project-item:hover {
   border-color: var(--accent);
+  transform: translateY(-2px); /* L1 Micro Lift */
 }
 
 .project-head {

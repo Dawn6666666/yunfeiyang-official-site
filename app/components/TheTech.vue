@@ -1,9 +1,9 @@
 <template>
-  <section id="tech" class="tech-section">
+  <section id="tech" class="tech-section" ref="sectionRef">
     <div class="tech__container">
       
       <!-- Section Header -->
-      <header class="tech__header">
+      <header class="tech__header reveal">
         <h2 class="tech__title">Tech Tracks.</h2>
         <div class="tech__sub">
           <p class="tech__subtitle">Find your path.</p>
@@ -11,8 +11,8 @@
         </div>
       </header>
       
-      <!-- Grid -->
-      <div class="track-grid">
+      <!-- Grid (Staggered Reveal) -->
+      <div class="track-grid reveal-stagger">
         
         <!-- Track 1 -->
         <div class="track-card">
@@ -78,6 +78,14 @@
     </div>
   </section>
 </template>
+
+<script setup lang="ts">
+import { ref } from 'vue'
+import { useScrollReveal } from '@/composables/useScrollReveal'
+
+const sectionRef = ref(null)
+useScrollReveal(sectionRef)
+</script>
 
 <style scoped>
 .tech-section {
@@ -155,7 +163,12 @@
   /* 3D Engine Setup */
   transform-style: preserve-3d;
   perspective: 1000px; /* Local perspective for content pop */
-  transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease;
+  transform-style: preserve-3d;
+  perspective: 1000px; /* Local perspective for content pop */
+  transition: 
+    border-color var(--duration-hover) var(--ease-power3-out),
+    box-shadow var(--duration-hover) var(--ease-power3-out),
+    transform var(--duration-hover) var(--ease-power3-out);
 }
 
 /* Blueprint Pattern (Reveal on hover) */

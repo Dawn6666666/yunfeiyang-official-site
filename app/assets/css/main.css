@@ -12,6 +12,12 @@
     --muted: #9AA3B2;
     --divider: #1A1F2B;
 
+    /* 动效规范 (Motion System 2.5) */
+    --ease-power3-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+    --duration-reveal: 0.8s;
+    --duration-hover: 0.4s;
+    --reveal-distance: 30px;
+
     /* 字体 */
     --font-display: 'Space Grotesk', sans-serif;
     --font-body: 'Inter', sans-serif;
@@ -72,4 +78,42 @@ body {
 a {
     color: inherit;
     text-decoration: none;
+}
+
+/* Scroll Reveal Utilities */
+.reveal,
+.reveal-stagger>* {
+    opacity: 0;
+    transform: translateY(var(--reveal-distance));
+    transition:
+        opacity var(--duration-reveal) var(--ease-power3-out),
+        transform var(--duration-reveal) var(--ease-power3-out);
+    will-change: opacity, transform;
+}
+
+.reveal.is-visible,
+.reveal-stagger.is-visible>* {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stagger Delays (up to 5 items) */
+.reveal-stagger.is-visible>*:nth-child(1) {
+    transition-delay: 0.0s;
+}
+
+.reveal-stagger.is-visible>*:nth-child(2) {
+    transition-delay: 0.1s;
+}
+
+.reveal-stagger.is-visible>*:nth-child(3) {
+    transition-delay: 0.2s;
+}
+
+.reveal-stagger.is-visible>*:nth-child(4) {
+    transition-delay: 0.3s;
+}
+
+.reveal-stagger.is-visible>*:nth-child(5) {
+    transition-delay: 0.4s;
 }
