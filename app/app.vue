@@ -3,6 +3,7 @@
     <TheHero />
     <TheTransitionBuffer />
     <TheAbout />
+    <TheTech />
   </div>
 </template>
 

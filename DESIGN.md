@@ -501,6 +501,70 @@ About 章节承接在 **Hero (高能量)** 和 **Buffer (情绪留白)** 之后�
 - **进入**：右侧内容块（R1, R2, R3）随滚动逐个进入视口，带轻微 `TranslateY` 和 `Opacity` 动画（这也是为什么我们在 Hero 组件中做了状态封装，这里可以复用）。
 - **左侧 Title**：当 R1 进入时，"About." 固定在视口左上方；当 R3 离开时，"About." 同步向上离开。
 
-> **下一步**：实现基础的 About 静态组件结构（暂无复杂 ScrollTrigger）。
+
+---
+
+## 十一、Tech 章节：结构与叙事设计
+
+### 11.1 设计意图
+
+Tech 章节承接 About 的“价值观”，负责展示**“硬实力”与“成长路径”**。
+我们拒绝堆砌 Logo 墙（React / Vue / Java...），而是展示**领域（Domains）与方向（Tracks）**。
+
+核心叙事：**"We don't just learn languages. We master domains."**
+
+### 11.2 信息分组策略：三大技术赛道 (The 3 Tracks)
+
+我们将技术栈重新封装为三个核心领域，每个领域代表一种成长路径：
+
+#### Track 1: Cloud Native (基础设施)
+*   **定位**：The Backbone. 构建高可用、可扩展的数字基座。
+*   **关键词**：Kubernetes, Docker, Go, Microservices.
+*   **成长目标**：成为系统架构师 (System Architect).
+
+#### Track 2: Intelligence (AI & LLM)
+*   **定位**：The Frontier. 探索生成式 AI 的应用边界。
+*   **关键词**：Transformers, RAG, PyTorch, Agents.
+*   **成长目标**：成为 AI 工程师 (AI Engineer).
+
+#### Track 3: Modern Engineering (全栈/软件工程)
+*   **定位**：The Craft. 打造极致体验与优雅代码。
+*   **关键词**：Next.js, Rust, Design Systems, Performance.
+*   **成长目标**：成为全栈创造者 (Full-stack Maker).
+
+### 11.3 结构与顺序
+
+```
+┌─────────────────────────────────────────┐
+│  Section Header                         │
+│  "Tech Tracks."                         │
+│  Sub: "Find your path."                 │
+└─────────────────────────────────────────┘
+           ↓
+┌─────────────────────────────────────────┐
+│  Card 1: Cloud Native                   │
+│  [Icon/Abstract Shape]                  │
+│  [Title] + [Keywords]                   │
+│  [Outcome Description]                  │
+└─────────────────────────────────────────┘
+           ↓
+┌─────────────────────────────────────────┐
+│  Card 2: Intelligence (AI)              │
+│  ...                                    │
+└─────────────────────────────────────────┘
+           ↓
+┌─────────────────────────────────────────┐
+│  Card 3: Modern Engineering             │
+│  ...                                    │
+└─────────────────────────────────────────┘
+```
+
+### 11.4 交互意图 (Preview)
+
+- **Hover 交互**：默认只显示 Title 和 Keywords。鼠标 Hover 时，展开显示“成长目标”与详细描述，背景微亮。
+- **布局**：PC 端建议采用 **横向网格 (Grid)** 或 **手风琴 (Accordion)**，移动端为垂直堆叠。
+
+> **下一步**：根据确认的“三大赛道”结构，实现 Tech v1 静态组件。
+
 
 
