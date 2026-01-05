@@ -707,7 +707,62 @@ Achievements 章节承接 Tech 的“能力展示”，负责提供**“现实�
 *   **Will-change**: 仅对变化的图层（Transform/Opacity）声明。
 *   **Passive Listeners**: 确保滚动不被阻塞。
 
-> **下一步**：更新 `TheHero.vue`，引入 CSS 变量驱动的动效系统。
+
+---
+
+## 十五、Tech v2 Phase A 实验：交互增强 (The Depth Card)
+
+### 15.1 设计理念：Engineering Depth (工程深度)
+
+Tech 章节展示的是“硬实力”。我们希望通过交互传达：**"看似平静的表面下，蕴含着复杂的工程深度。"**
+交互核心不是为了“乱动”，而是为了**“揭示 (Reveal)”** 和 **“分层 (Layering)”**。
+
+### 15.2 交互设计方案 (The Hover State)
+
+当用户鼠标悬停在 Tech Card 上时，发生以下变化：
+
+#### A. Z-Axis Lift (Z轴分层)
+*   **动作**：卡片保持不动或微抬，但卡片内的 **Keywords** 和 **Growth Goal** 明显向前浮起 (`perspective` + `translateZ`).
+*   **语义**：信息不再是平铺的，重点信息（关键词/目标）处于更高的维度，暗示其重要性。
+
+#### B. Engineering Grid (工程网格揭示)
+*   **动作**：卡片背景浮现出低透明度的**精密网格**或**虚线纹理**。
+*   **语义**：揭示底层的“蓝图 (Blueprint)”感，呼应 "Builders" 的身份。
+
+#### C. Focus Glow (聚焦辉光)
+*   **动作**：边框高亮为 Accent Color，并伴随微弱的同色系外发光。
+*   **语义**：选中状态，能量聚焦。
+
+### 15.3 技术实现策略
+
+#### 1. CSS 3D Transforms (核心)
+使用纯 CSS 实现高性能 3D 效果：
+```css
+.track-card {
+  transform-style: preserve-3d; /* 开启 3D 空间 */
+  transition: transform 0.4s ease;
+}
+
+.track-card:hover .track__content {
+  transform: translateZ(20px); /* 内容前浮 */
+}
+
+.track-card:hover .track__position {
+  transform: translateZ(10px); /* 层级错落 */
+}
+```
+
+#### 2. Pattern Reveal (背景纹理)
+使用 SVG 或 CSS Gradient 预埋在 `::before` 伪元素中，默认 `opacity: 0`，Hover 时 `opacity: 1`。
+*   *Cloud Native* -> 点阵 (Dots)
+*   *Intelligence* -> 神经网络连线 (Network)
+*   *Modern Engineering* -> 方格 (Grid)
+
+#### 3. Magnetic Tilt (Optional / Low Priority)
+如果需要更加极致的体验，可以复用 Hero 的 JS 逻辑实现卡片跟随鼠标倾斜，但在 Phase A 建议先用 CSS 3D Lift，**更稳、更轻**。
+
+> **下一步**：无需 JS，纯 CSS 升级 `TheTech.vue`。
+
 
 
 
