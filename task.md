@@ -46,7 +46,9 @@
 
 ## Phase 3: Analytics & SEO
 - [x] 6. GA4 基础埋点 (feature/ga4) <!-- id: 106 -->
-- [ ] 7. SEO JSON-LD (feature/seo) <!-- id: 107 -->
+- [x] 7. SEO 增强 (feature/seo) <!-- id: 107 -->
+  - [x] JSON-LD Schema
+  - [x] Meta Tags
 
 ## 11. 工作分解（可交付任务分解）
 - 将方案拆成若干可交付任务（设计、前端、内容、QA、部署、数据），每项给出工作清单与建议优先级（高/中/低）。**（不要给出硬性日程，但可给“工时范围建议”以便估算）**

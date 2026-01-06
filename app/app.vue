@@ -12,7 +12,53 @@
 </template>
 
 <script setup lang="ts">
-// 主应用入口
+const title = '云飞扬社团 | We Code the Future'
+const description = 'Student Tech Community established in 2014. Focused on Cloud, AI, and Software Development. Guided by Prof. Chen Ke.'
+const url = 'https://yunfeiyang.club'
+const image = 'https://yunfeiyang.club/og-image.png'
+
+useSeoMeta({
+  title,
+  ogTitle: title,
+  description,
+  ogDescription: description,
+  ogImage: image,
+  twitterCard: 'summary_large_image',
+})
+
+useHead({
+  htmlAttrs: {
+    lang: 'zh-CN'
+  },
+  link: [
+    { rel: 'canonical', href: url }
+  ],
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Organization',
+        name: '云飞扬社团 (Yun Fei Yang Club)',
+        url: url,
+        logo: 'https://yunfeiyang.club/logo.png',
+        foundingDate: '2014',
+        slogan: 'We Code the Future',
+        description: description,
+        member: [
+          {
+            '@type': 'Person',
+            name: 'Chen Ke',
+            roleName: 'Advisor'
+          }
+        ],
+        sameAs: [
+          'https://github.com/Dawn6666666/yunfeiyang-official-site'
+        ]
+      })
+    }
+  ]
+})
 </script>
 
 <style>
