@@ -3,6 +3,12 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
 
+  runtimeConfig: {
+    public: {
+      gaId: process.env.NUXT_PUBLIC_GA_ID || 'G-PLACEHOLDER'
+    }
+  },
+
   app: {
     head: {
       title: '云飞扬社团 | We Code the Future',

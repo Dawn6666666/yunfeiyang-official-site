@@ -42,10 +42,10 @@
 ## Phase 2: Core Components
 - [x] 3. Hero 组件升级 (feature/hero) <!-- id: 103 -->
 - [x] 4. CertificateWall 组件 (feature/certificate-wall) <!-- id: 104 -->
-- [ ] 5. JoinForm 组件 (feature/join-form) <!-- id: 105 -->
+- [x] 5. JoinForm 组件 (feature/join-form) <!-- id: 105 -->
 
 ## Phase 3: Analytics & SEO
-- [ ] 6. GA4 基础埋点 (feature/ga4) <!-- id: 106 -->
+- [x] 6. GA4 基础埋点 (feature/ga4) <!-- id: 106 -->
 - [ ] 7. SEO JSON-LD (feature/seo) <!-- id: 107 -->
 
 ## 11. 工作分解（可交付任务分解）
