@@ -19,14 +19,14 @@
         <!-- Dimension 2: The Soil -->
         <div class="impact-col impact-col--soil">
           <h3 class="col-title">The Soil</h3>
-          <div class="project-list">
-            <div class="project-item">
+          <div class="project-list" @mousemove="handleMouseMove">
+            <a href="https://intellibuddy-puce.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-item">
               <div class="project-head">
                 <span class="project-name">智教虚拟化平台</span>
                 <span class="project-stat">Deployed</span>
               </div>
               <p class="project-desc">智能教育结合虚拟化平台，已投入使用。</p>
-            </div>
+            </a>
             <div class="project-item">
               <div class="project-head">
                 <span class="project-name">云上智慧路灯</span>
@@ -44,19 +44,19 @@
           </div>
         </div>
 
-        <!-- Dimension 3: The Legacy -->
+        <!-- Dimension 3: The Culture -->
         <div class="impact-col impact-col--legacy">
-          <h3 class="col-title">The Legacy</h3>
+          <h3 class="col-title">The Culture</h3>
           <div class="alumni-cloud">
-            <span>ByteDance</span>
-            <span>Tencent</span>
-            <span>Alibaba</span>
-            <span>Microsoft</span>
-            <span>CMU</span>
-            <span>Nyu</span>
-            <span>ZJU</span>
+            <span>Mentorship</span>
+            <span>Innovation</span>
+            <span>Engineering</span>
+            <span>Teamwork</span>
+            <span>Self-learning</span>
+            <span>Passion</span>
+            <span>Responsibility</span>
           </div>
-          <p class="legacy-note">我们的成员遍布各大科技公司与顶尖学府。</p>
+          <p class="legacy-note">专注于培养扎实的工程能力与职业素养。</p>
         </div>
 
       </div>
@@ -70,6 +70,19 @@ import { useScrollReveal } from '@/composables/useScrollReveal'
 
 const sectionRef = ref(null)
 useScrollReveal(sectionRef)
+
+const handleMouseMove = (e: MouseEvent) => {
+  const cards = document.querySelectorAll('.project-item')
+  for (const card of cards) {
+    const rect = card.getBoundingClientRect()
+    const x = e.clientX - rect.left
+    const y = e.clientY - rect.top
+    
+    // Cast to HTMLElement to safely set style
+    ;(card as HTMLElement).style.setProperty('--mouse-x', `${x}px`)
+    ;(card as HTMLElement).style.setProperty('--mouse-y', `${y}px`)
+  }
+}
 </script>
 
 <style scoped>
@@ -148,43 +161,107 @@ useScrollReveal(sectionRef)
   color: var(--text);
 }
 
-/* Project List (Soil) */
+/* Project List (Soil) - Spotlight Animation */
 .project-list {
   display: flex;
   flex-direction: column;
   gap: var(--space-md);
+  perspective: 1000px;
 }
 
 .project-item {
-  border-left: 2px solid var(--divider);
-  padding-left: var(--space-sm);
-  transition: border-color 0.3s;
+  position: relative;
+  display: block; /* Ensure anchor behaves like block */
+  padding: 1.25rem;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer; /* Change to pointer */
+  text-decoration: none; /* Remove underline for links */
 }
 
+/* Hover State: Lift & Glow */
 .project-item:hover {
+  transform: translateY(-4px) scale(1.02);
   border-color: var(--accent);
-  transform: translateY(-2px); /* L1 Micro Lift */
+  box-shadow: 
+    0 10px 30px -10px rgba(0, 0, 0, 0.3),
+    0 0 0 1px var(--accent-glow);
+}
+
+/* Spotlight Gradient Overlay */
+.project-item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), 
+    rgba(255, 255, 255, 0.06),
+    transparent 40%
+  );
+  opacity: 0; /* Hidden by default */
+  transition: opacity 0.5s;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.project-item:hover::before {
+  opacity: 1;
 }
 
 .project-head {
+  position: relative;
+  z-index: 2;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Ensure wrapping on small screens */
+  gap: 0.5rem;     /* Gap when wrapped */
   font-family: var(--font-mono);
-  margin-bottom: 0.25em;
+  margin-bottom: 0.5em;
 }
 
 .project-name {
   color: var(--text);
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: color 0.3s;
+  white-space: normal; /* Allow text wrapping */
 }
 
-.project-stat {
+.project-item:hover .project-name {
   color: var(--accent);
 }
 
-.project-desc {
-  font-size: 0.875rem;
+.project-stat {
+  font-size: 0.75rem;
+  padding: 0.25em 0.75em;
+  border-radius: 99px;
+  background: var(--bg);
+  border: 1px solid var(--border);
   color: var(--muted);
+  transition: all 0.3s;
+}
+
+.project-item:hover .project-stat {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.project-desc {
+  position: relative;
+  z-index: 2;
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.6;
+  transition: color 0.3s;
+}
+
+.project-item:hover .project-desc {
+  color: var(--text);
 }
 
 /* Alumni Cloud (Legacy) */
@@ -220,6 +297,14 @@ useScrollReveal(sectionRef)
   @media (max-width: 768px) {
     .impact-grid {
       grid-template-columns: 1fr;
+    }
+    
+    .project-item {
+      padding: 1rem; /* Compact padding on mobile */
+    }
+    
+    .achievements__title {
+      font-size: 2.5rem; /* Smaller title on mobile */
     }
   }
 </style>
