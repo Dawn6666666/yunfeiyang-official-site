@@ -40,8 +40,8 @@
 - [x] 2. ThemeToggle 组件 (feature/theme-toggle) <!-- id: 102 -->
 
 ## Phase 2: Core Components
-- [ ] 3. Hero 组件升级 (feature/hero) <!-- id: 103 -->
-- [ ] 4. CertificateWall 组件 (feature/certificate-wall) <!-- id: 104 -->
+- [x] 3. Hero 组件升级 (feature/hero) <!-- id: 103 -->
+- [x] 4. CertificateWall 组件 (feature/certificate-wall) <!-- id: 104 -->
 - [ ] 5. JoinForm 组件 (feature/join-form) <!-- id: 105 -->
 
 ## Phase 3: Analytics & SEO

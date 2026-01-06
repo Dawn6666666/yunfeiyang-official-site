@@ -9,29 +9,11 @@
       
       <div class="impact-grid reveal-stagger">
         
-        <!-- Dimension 1: The Peaks -->
+        <!-- Dimension 1: The Peaks (Updated to Cert Wall) -->
         <div class="impact-col impact-col--peaks">
           <h3 class="col-title">The Peaks</h3>
-          <table class="data-table">
-            <tbody>
-              <tr>
-                <td class="cell-year">2023</td>
-                <td class="cell-award">"Internet+" National Gold</td>
-              </tr>
-              <tr>
-                <td class="cell-year">2023</td>
-                <td class="cell-award">Challenge Cup National Silver</td>
-              </tr>
-              <tr>
-                <td class="cell-year">2022</td>
-                <td class="cell-award">ACM-ICPC Regional Silver</td>
-              </tr>
-              <tr>
-                <td class="cell-year">2021</td>
-                <td class="cell-award">Mathematical Modeling State 1st</td>
-              </tr>
-            </tbody>
-          </table>
+          <p class="section-desc">Consistent excellence in national competitions.</p>
+          <CertificateWall />
         </div>
 
         <!-- Dimension 2: The Soil -->
@@ -120,7 +102,15 @@ useScrollReveal(sectionRef)
   font-size: 1.25rem;
   color: var(--muted);
   margin-bottom: var(--space-md);
+  margin-bottom: var(--space-md);
   font-weight: 500;
+}
+
+.section-desc {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-bottom: var(--space-md);
+  max-width: 60ch;
 }
 
 /* Table Style (Peaks) */
@@ -213,11 +203,16 @@ useScrollReveal(sectionRef)
   opacity: 0.6;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .impact-grid {
-    grid-template-columns: 1fr;
-    gap: var(--space-xl);
+  /* Responsive */
+  @media (min-width: 1024px) {
+    .impact-col--peaks {
+      grid-column: 1 / -1;
+    }
   }
-}
+
+  @media (max-width: 768px) {
+    .impact-grid {
+      grid-template-columns: 1fr;
+    }
+  }
 </style>
