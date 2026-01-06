@@ -9,33 +9,33 @@
       <div class="about__block about__block--identity reveal">
         <p class="about__display-text">
           Not just a club. <br>
-          <span class="highlight">A playground for future builders.</span>
+          <span class="highlight">未来建设者的<br>训练场。</span>
         </p>
       </div>
 
       <!-- R2: The Origin -->
       <div class="about__block about__block--origin reveal">
         <p class="about__body-text">
-          Founded in 2014 under the guidance of Prof. Chen Ke, 
-          we started as a small group of code enthusiasts.
+          成立于 2014 年，由学校第一届云计算专业学生在老师指导下创建。<br>
+          我们是一个技术型、学习型、创新创业型的学生组织。
         </p>
         <p class="about__body-text">
-          Today, we are a community exploring the boundaries of 
-          <span class="text-accent">Cloud</span>, 
-          <span class="text-accent">AI</span>, and 
-          <span class="text-accent">Modern Software</span>.
+          今天，我们致力于探索 
+          <span class="text-accent">云计算</span>、
+          <span class="text-accent">人工智能</span> 和 
+          <span class="text-accent">现代软件工程</span> 的边界。
         </p>
       </div>
 
       <!-- R3: The Vibe -->
       <div class="about__block about__block--vibe reveal">
         <ul class="vibe-list">
-          <li class="vibe-item">[ Exploration ]</li>
-          <li class="vibe-item">[ Growth ]</li>
-          <li class="vibe-item">[ Passion ]</li>
+          <li class="vibe-item">[ 探索 ]</li>
+          <li class="vibe-item">[ 成长 ]</li>
+          <li class="vibe-item">[ 热爱 ]</li>
         </ul>
         <p class="about__caption">
-          No mandatory check-ins. Just pure love for technology.
+          "源于热爱，不止于代码。"
         </p>
       </div>
 

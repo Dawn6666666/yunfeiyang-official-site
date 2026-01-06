@@ -1,42 +1,42 @@
 [
     {
-        "id": "ican-2024-gold",
-        "title": "iCAN International Innovation Contest",
-        "award": "National Second Prize",
+        "id": "ican-national-1",
+        "title": "iCAN 国际创新创业大赛",
+        "award": "National First Prize (国家级一等奖)",
         "year": "2024",
-        "image": "https://placehold.co/800x600/151922/4DA3FF?text=iCAN+Award",
-        "description": "Project: Smart IoT Monitoring System. Team: Cloud Walker."
+        "image": "/images/certs/ican-national-1.jpg",
+        "description": "中国区总决赛一等奖。参赛项目展示了极高的创新性与商业价值，获得了评审团的高度评价。"
     },
     {
-        "id": "lanqiao-2023-first",
-        "title": "Lanqiao Cup Programming Contest",
-        "award": "Provincial First Prize",
+        "id": "challenge-silver",
+        "title": "Challenge Cup (挑战杯)",
+        "award": "National Silver Award (银奖)",
         "year": "2023",
-        "image": "https://placehold.co/800x600/151922/4DA3FF?text=Lanqiao+Cup",
-        "description": "Category: C/C++ Development. Individual: Zhang San."
+        "image": "/images/certs/challenge-silver.jpg",
+        "description": "“挑战杯”中国大学生创业计划竞赛。在激烈的竞争中脱颖而出，彰显了团队的社会责任感与创业实践能力。"
     },
     {
-        "id": "challenge-cup-silver",
-        "title": "Challenge Cup",
-        "award": "Silver Medal",
+        "id": "smartcar-national-2",
+        "title": "Smart Car Competition (智能车)",
+        "award": "National Second Prize (国家级二等奖)",
         "year": "2023",
-        "image": "https://placehold.co/800x600/151922/4DA3FF?text=Challenge+Cup",
-        "description": "Project: AI-driven Education Platform."
+        "image": "/images/certs/smartcar-national-2.jpg",
+        "description": "全国大学生智能汽车竞赛。团队在车辆控制算法与硬件设计上展现了卓越的工程技术水平。"
     },
     {
-        "id": "internet-plus-bronze",
-        "title": "Internet+ Competition",
-        "award": "Bronze Medal",
+        "id": "math-provincial-1",
+        "title": "Mathematical Modeling (数学建模)",
+        "award": "Provincial First Prize (省级一等奖)",
         "year": "2022",
-        "image": "https://placehold.co/800x600/151922/4DA3FF?text=Internet%2B",
-        "description": "Innovation Track."
+        "image": "/images/certs/math-provincial-1.jpg",
+        "description": "全国大学生数学建模竞赛。团队运用复杂的数学模型解决了实际问题，展现了强大的逻辑思维与计算能力。"
     },
     {
-        "id": "math-modeling-2022",
-        "title": "Mathematical Modeling",
-        "award": "National Second Prize",
-        "year": "2022",
-        "image": "https://placehold.co/800x600/151922/4DA3FF?text=Math+Model",
-        "description": "Problem B: Drone Routing Optimization."
+        "id": "lanqiao-provincial-2",
+        "title": "Lanqiao Cup (蓝桥杯)",
+        "award": "Provincial Second Prize (省级二等奖)",
+        "year": "2023",
+        "image": "/images/certs/lanqiao-provincial-2.jpg",
+        "description": "全国软件和信息技术专业人才大赛。在算法设计与编程实战中表现良好，体现了扎实的代码功底。"
     }
 ]

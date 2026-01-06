@@ -6,21 +6,21 @@
       <header class="tech__header reveal">
         <h2 class="tech__title">Tech Tracks.</h2>
         <div class="tech__sub">
-          <p class="tech__subtitle">Find your path.</p>
-          <p class="tech__quote">"We don't just learn languages. We master domains."</p>
+          <p class="tech__subtitle">软件工程专业核心方向。</p>
+          <p class="tech__quote">"云飞扬社团汇聚了软件工程及相关专业的优秀学生，<br>共同探索前沿技术。"</p>
         </div>
       </header>
       
       <!-- Grid (Staggered Reveal) -->
       <div class="track-grid reveal-stagger">
         
-        <!-- Track 1 -->
+        <!-- Track 1: Cloud Computing -->
         <div class="track-card">
           <span class="track__number">01</span>
           <div class="track__content">
-            <h3 class="track__title">Cloud Native</h3>
-            <p class="track__position">The Backbone</p>
-            <p class="track__desc">Build scalable infrastructure that powers the modern web.</p>
+            <h3 class="track__title">云计算</h3>
+            <p class="track__position">Cloud Computing</p>
+            <p class="track__desc">构建高可用、可扩展的云端基础设施，掌握容器化与微服务架构。</p>
             <div class="track__keywords">
               <span>Kubernetes</span>
               <span>Docker</span>
@@ -29,48 +29,88 @@
             </div>
           </div>
           <div class="track__footer">
-            <span class="track__label">Growth Goal</span>
-            <span class="track__goal">System Architect</span>
+            <span class="track__label">成长目标</span>
+            <span class="track__goal">云架构师</span>
           </div>
         </div>
 
-        <!-- Track 2 -->
+        <!-- Track 2: Mobile App Dev -->
         <div class="track-card">
           <span class="track__number">02</span>
           <div class="track__content">
-            <h3 class="track__title">Intelligence</h3>
-            <p class="track__position">The Frontier</p>
-            <p class="track__desc">Explore the boundaries of AI, Agents, and large models.</p>
+            <h3 class="track__title">移动应用开发</h3>
+            <p class="track__position">Mobile App Development</p>
+            <p class="track__desc">打造极致体验的原生与跨平台移动应用，连接数字世界与指尖。</p>
             <div class="track__keywords">
-              <span>Transformers</span>
-              <span>RAG</span>
-              <span>PyTorch</span>
-              <span>Agents</span>
+              <span>Flutter</span>
+              <span>Swift</span>
+              <span>Kotlin</span>
+              <span>HarmonyOS</span>
             </div>
           </div>
           <div class="track__footer">
-            <span class="track__label">Growth Goal</span>
-            <span class="track__goal">AI Engineer</span>
+            <span class="track__label">成长目标</span>
+            <span class="track__goal">移动开发工程师</span>
           </div>
         </div>
 
-        <!-- Track 3 -->
+        <!-- Track 3: Intelligent Software -->
         <div class="track-card">
           <span class="track__number">03</span>
           <div class="track__content">
-            <h3 class="track__title">Modern Engineering</h3>
-            <p class="track__position">The Craft</p>
-            <p class="track__desc">Craft delightful user experiences with extreme performance.</p>
+            <h3 class="track__title">智能软件开发</h3>
+            <p class="track__position">Intelligent Software</p>
+            <p class="track__desc">融合 AI 技术的下一代软件工程，探索大模型与智能体的应用落地。</p>
             <div class="track__keywords">
-              <span>Next.js</span>
-              <span>Rust</span>
-              <span>Design Systems</span>
-              <span>Perf</span>
+              <span>LLM</span>
+              <span>Agents</span>
+              <span>RAG</span>
+              <span>Python</span>
             </div>
           </div>
           <div class="track__footer">
-            <span class="track__label">Growth Goal</span>
-            <span class="track__goal">Full-stack Maker</span>
+            <span class="track__label">成长目标</span>
+            <span class="track__goal">AI 应用工程师</span>
+          </div>
+        </div>
+
+        <!-- Track 4: Industrial Digital Intelligence -->
+        <div class="track-card">
+          <span class="track__number">04</span>
+          <div class="track__content">
+            <h3 class="track__title">工业数智化</h3>
+            <p class="track__position">Industrial Digital Intelligence</p>
+            <p class="track__desc">赋能传统工业的数字化转型，构建智慧城市与物联网解决方案。</p>
+            <div class="track__keywords">
+              <span>IoT</span>
+              <span>Digital Twin</span>
+              <span>Smart City</span>
+              <span>Industry 4.0</span>
+            </div>
+          </div>
+          <div class="track__footer">
+            <span class="track__label">成长目标</span>
+            <span class="track__goal">IoT 解决方案专家</span>
+          </div>
+        </div>
+
+        <!-- Track 5: Information Security -->
+        <div class="track-card">
+          <span class="track__number">05</span>
+          <div class="track__content">
+            <h3 class="track__title">信息安全</h3>
+            <p class="track__position">Information Security</p>
+            <p class="track__desc">守护数字世界的安全边界，不仅是防御，更是对底层原理的深刻理解。</p>
+            <div class="track__keywords">
+              <span>CTF</span>
+              <span>PenTesting</span>
+              <span>Cryptography</span>
+              <span>Network Sec</span>
+            </div>
+          </div>
+          <div class="track__footer">
+            <span class="track__label">成长目标</span>
+            <span class="track__goal">安全工程师</span>
           </div>
         </div>
 

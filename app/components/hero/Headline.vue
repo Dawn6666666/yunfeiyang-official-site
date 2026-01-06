@@ -83,24 +83,28 @@ defineProps<{
 .hero__code--shimmer.animate {
   -webkit-text-stroke: 0px transparent; /* Remove stroke when filled */
   
-  /* Gradient Flow */
-  background: linear-gradient(
+  /* Base color + Shimmer Overlay */
+  background-color: var(--text);
+  background-image: linear-gradient(
     110deg, 
-    var(--text) 45%, 
-    #ffffff 50%, 
-    var(--text) 55%
+    transparent 40%, 
+    rgba(255, 255, 255, 0.9) 50%, 
+    transparent 60%
   );
-  background-size: 250% 100%;
+  background-size: 200% 100%;
+  background-repeat: no-repeat;
+  
+  /* Clip to text */
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
   
-  animation: shimmer-flow 3s infinite linear;
+  animation: shimmer-flow 4s infinite linear;
 }
 
 @keyframes shimmer-flow {
-  0% { background-position: 100% 0; }
-  100% { background-position: -100% 0; }
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
 }
 
 /* "the" - Simple Fade */

@@ -12,7 +12,7 @@
         <!-- Dimension 1: The Peaks (Updated to Cert Wall) -->
         <div class="impact-col impact-col--peaks">
           <h3 class="col-title">The Peaks</h3>
-          <p class="section-desc">Consistent excellence in national competitions.</p>
+          <p class="section-desc">在国家级竞赛中持续保持卓越表现。</p>
           <CertificateWall />
         </div>
 
@@ -22,17 +22,24 @@
           <div class="project-list">
             <div class="project-item">
               <div class="project-head">
-                <span class="project-name">Campus OS</span>
-                <span class="project-stat">2.4k★</span>
+                <span class="project-name">智教虚拟化平台</span>
+                <span class="project-stat">Deployed</span>
               </div>
-              <p class="project-desc">Open-source campus service solution.</p>
+              <p class="project-desc">智能教育结合虚拟化平台，已投入使用。</p>
             </div>
             <div class="project-item">
               <div class="project-head">
-                <span class="project-name">YFY Course</span>
-                <span class="project-stat">15k Users</span>
+                <span class="project-name">云上智慧路灯</span>
+                <span class="project-stat">IoT</span>
               </div>
-              <p class="project-desc">Course selection helper for students.</p>
+              <p class="project-desc">面向智慧城市的云上多功能路灯系统。</p>
+            </div>
+            <div class="project-item">
+              <div class="project-head">
+                <span class="project-name">数智云联</span>
+                <span class="project-stat">Cloud</span>
+              </div>
+              <p class="project-desc">基于行业场景的数字化解决方案。</p>
             </div>
           </div>
         </div>
@@ -49,7 +56,7 @@
             <span>Nyu</span>
             <span>ZJU</span>
           </div>
-          <p class="legacy-note">Our members build the future everywhere.</p>
+          <p class="legacy-note">我们的成员遍布各大科技公司与顶尖学府。</p>
         </div>
 
       </div>
