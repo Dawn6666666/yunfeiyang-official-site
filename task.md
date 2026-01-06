@@ -33,11 +33,11 @@
 # 云飞扬社团官网 v3.0 开发任务列表
 
 ## Phase 1: Infrastructure
-- [ ] 1. Theme 基础设施 (feature/theme) <!-- id: 101 -->
-  - [ ] CSS Tokens (Dark/Light)
-  - [ ] useTheme Composable
-  - [ ] Init Script (No flash)
-- [ ] 2. ThemeToggle 组件 (feature/theme-toggle) <!-- id: 102 -->
+- [x] 1. Theme 基础设施 (feature/theme) <!-- id: 101 -->
+  - [x] CSS Tokens (Dark/Light)
+  - [x] useTheme Composable
+  - [x] Init Script (No flash)
+- [x] 2. ThemeToggle 组件 (feature/theme-toggle) <!-- id: 102 -->
 
 ## Phase 2: Core Components
 - [ ] 3. Hero 组件升级 (feature/hero) <!-- id: 103 -->

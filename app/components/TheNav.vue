@@ -12,6 +12,7 @@
         <a href="#about" class="nav__link" @click.prevent="scrollTo('#about')">About</a>
         <a href="#tech" class="nav__link" @click.prevent="scrollTo('#tech')">Tech</a>
         <a href="#impact" class="nav__link" @click.prevent="scrollTo('#impact')">Impact</a>
+        <ThemeToggle />
       </div>
 
     </div>
@@ -60,7 +61,7 @@ onUnmounted(() => {
 }
 
 .global-nav.is-scrolled {
-  background-color: rgba(11, 13, 18, 0.8); /* var(--bg) with opacity */
+  background-color: var(--bg-overlay);
   backdrop-filter: blur(12px);
   border-bottom-color: var(--divider);
 }
@@ -90,6 +91,7 @@ onUnmounted(() => {
 /* Links */
 .nav__links {
   display: flex;
+  align-items: center;
   gap: var(--space-md);
 }
 
