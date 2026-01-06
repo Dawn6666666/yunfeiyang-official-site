@@ -2,75 +2,95 @@
   <section id="tech" class="tech-section" ref="sectionRef">
     <div class="tech__container">
       
-      <!-- Section Header -->
+      <!-- 头部介绍 -->
       <header class="tech__header reveal">
-        <h2 class="tech__title">Tech Tracks.</h2>
+        <h2 class="tech__title">技术领航.</h2>
         <div class="tech__sub">
-          <p class="tech__subtitle">Find your path.</p>
-          <p class="tech__quote">"We don't just learn languages. We master domains."</p>
+          <p class="tech__subtitle">寻找属于你的赛道。</p>
+          <p class="tech__quote">"我们不只是学习语言，我们掌握领域。"</p>
         </div>
       </header>
       
-      <!-- Grid (Staggered Reveal) -->
+      <!-- 技术网格 (交错动画) -->
       <div class="track-grid reveal-stagger">
         
-        <!-- Track 1 -->
+        <!-- Track 1: 云计算 (Cloud) -->
         <div class="track-card">
           <span class="track__number">01</span>
           <div class="track__content">
-            <h3 class="track__title">Cloud Native</h3>
-            <p class="track__position">The Backbone</p>
-            <p class="track__desc">Build scalable infrastructure that powers the modern web.</p>
+            <h3 class="track__title">云计算 & 大数据</h3>
+            <p class="track__position">数字基座 (Infrastructure)</p>
+            <p class="track__desc">构建支撑现代互联网的可扩展基础设施与数据平台。</p>
             <div class="track__keywords">
               <span>Kubernetes</span>
               <span>Docker</span>
-              <span>Go</span>
-              <span>Microservices</span>
+              <span>Linux</span>
+              <span>虚拟化</span>
             </div>
           </div>
           <div class="track__footer">
-            <span class="track__label">Growth Goal</span>
-            <span class="track__goal">System Architect</span>
+            <span class="track__label">成长目标</span>
+            <span class="track__goal">系统架构师</span>
           </div>
         </div>
 
-        <!-- Track 2 -->
+        <!-- Track 2: 人工智能 (AI) -->
         <div class="track-card">
           <span class="track__number">02</span>
           <div class="track__content">
-            <h3 class="track__title">Intelligence</h3>
-            <p class="track__position">The Frontier</p>
-            <p class="track__desc">Explore the boundaries of AI, Agents, and large models.</p>
+            <h3 class="track__title">人工智能</h3>
+            <p class="track__position">技术前沿 (The Frontier)</p>
+            <p class="track__desc">探索深度学习、大模型代理 (Agents) 与智能算法的边界。</p>
             <div class="track__keywords">
-              <span>Transformers</span>
-              <span>RAG</span>
+              <span>Python</span>
               <span>PyTorch</span>
-              <span>Agents</span>
+              <span>RAG</span>
+              <span>LLM</span>
             </div>
           </div>
           <div class="track__footer">
-            <span class="track__label">Growth Goal</span>
-            <span class="track__goal">AI Engineer</span>
+            <span class="track__label">成长目标</span>
+            <span class="track__goal">算法工程师</span>
           </div>
         </div>
 
-        <!-- Track 3 -->
+        <!-- Track 3: 软件开发 (Dev) -->
         <div class="track-card">
           <span class="track__number">03</span>
           <div class="track__content">
-            <h3 class="track__title">Modern Engineering</h3>
-            <p class="track__position">The Craft</p>
-            <p class="track__desc">Craft delightful user experiences with extreme performance.</p>
+            <h3 class="track__title">软件工程</h3>
+            <p class="track__position">全栈创造 (Full Stack)</p>
+            <p class="track__desc">从后端高并发服务到精美的前端交互，打造完整应用。</p>
             <div class="track__keywords">
-              <span>Next.js</span>
-              <span>Rust</span>
-              <span>Design Systems</span>
-              <span>Perf</span>
+              <span>Java/Spring</span>
+              <span>Vue/Nuxt</span>
+              <span>MySQL</span>
+              <span>Design</span>
             </div>
           </div>
           <div class="track__footer">
-            <span class="track__label">Growth Goal</span>
-            <span class="track__goal">Full-stack Maker</span>
+            <span class="track__label">成长目标</span>
+            <span class="track__goal">全栈开发者</span>
+          </div>
+        </div>
+
+        <!-- Track 4: 智能硬件 (IoT) - 新增 -->
+        <div class="track-card">
+          <span class="track__number">04</span>
+          <div class="track__content">
+            <h3 class="track__title">智能硬件 & IoT</h3>
+            <p class="track__position">虚实结合 (Integration)</p>
+            <p class="track__desc">软硬结合，赋予万物感知与互联的能力。如：智能车、智慧路灯。</p>
+            <div class="track__keywords">
+              <span>C/C++</span>
+              <span>嵌入式</span>
+              <span>传感器</span>
+              <span>智能控制</span>
+            </div>
+          </div>
+          <div class="track__footer">
+            <span class="track__label">成长目标</span>
+            <span class="track__goal">嵌入式专家</span>
           </div>
         </div>
 
@@ -84,6 +104,7 @@ import { ref } from 'vue'
 import { useScrollReveal } from '@/composables/useScrollReveal'
 
 const sectionRef = ref(null)
+// 启用滚动显现动画
 useScrollReveal(sectionRef)
 </script>
 
@@ -91,7 +112,7 @@ useScrollReveal(sectionRef)
 .tech-section {
   position: relative;
   z-index: 10;
-  padding: 15vh 0; /* Standardized rhythm */
+  padding: 15vh 0; /* 统一节奏 */
   background-color: var(--bg);
 }
 
@@ -101,7 +122,7 @@ useScrollReveal(sectionRef)
   padding: 0 var(--space-md);
 }
 
-/* Header */
+/* 头部样式 */
 .tech__header {
   margin-bottom: var(--space-xl);
   border-bottom: 1px solid var(--divider);
@@ -131,14 +152,15 @@ useScrollReveal(sectionRef)
 }
 
 .tech__quote {
-  font-family: var(--font-mono);
-  font-size: 0.875rem;
+  font-family: var(--font-body); /* 中文引言使用 Body 字体更易读 */
+  font-size: 1rem;
   color: var(--muted);
   max-width: 400px;
   text-align: right;
+  font-style: italic;
 }
 
-/* Grid */
+/* 网格布局 */
 .track-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -146,8 +168,8 @@ useScrollReveal(sectionRef)
 }
 
 /* ─────────────────────────────────────────────────────────
-   Tech v2 Phase A: The Depth Card
-   Pure CSS 3D Transforms
+   Tech v2 Phase A: 3D 深度卡片 (Depth Card)
+   纯 CSS3 3D 变换实现
    ───────────────────────────────────────────────────────── */
 
 .track-card {
@@ -160,23 +182,21 @@ useScrollReveal(sectionRef)
   min-height: 400px;
   background-color: var(--bg-elevated);
   
-  /* 3D Engine Setup */
+  /* 3D 引擎设置 */
   transform-style: preserve-3d;
-  perspective: 1000px; /* Local perspective for content pop */
-  transform-style: preserve-3d;
-  perspective: 1000px; /* Local perspective for content pop */
+  perspective: 1000px; /* 本地透视 */
   transition: 
     border-color var(--duration-hover) var(--ease-power3-out),
     box-shadow var(--duration-hover) var(--ease-power3-out),
     transform var(--duration-hover) var(--ease-power3-out);
 }
 
-/* Blueprint Pattern (Reveal on hover) */
+/* 蓝图背景纹理 (Hover 时显现) */
 .track-card::before {
   content: '';
   position: absolute;
   inset: 0;
-  /* Engineering Grid Pattern */
+  /* 工程网格纹理 */
   background-image: 
     linear-gradient(var(--divider) 1px, transparent 1px),
     linear-gradient(90deg, var(--divider) 1px, transparent 1px);
@@ -191,15 +211,15 @@ useScrollReveal(sectionRef)
 
 .track-card:hover {
   border-color: var(--accent);
-  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5); /* Subtle depth shadow */
-  /* transform: translateY(-5px);  Optional physical lift */
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5); /* 深度阴影 */
+  /* transform: translateY(-5px);  可选物理上浮 */
 }
 
 .track-card:hover::before {
-  opacity: 0.15; /* Reveal pattern subtly */
+  opacity: 0.15; /* 微妙显现纹理 */
 }
 
-/* Content Layering */
+/* 内容分层 (Z轴深度) */
 .track__number {
   font-family: var(--font-display);
   font-size: 4rem;
@@ -208,16 +228,16 @@ useScrollReveal(sectionRef)
   line-height: 1;
   opacity: 0.5;
   transition: transform 0.5s ease, color 0.4s ease;
-  transform: translateZ(0); /* Base layer */
+  transform: translateZ(0); /* 基础层 */
 }
 
 .track-card:hover .track__number {
-  transform: translateZ(-20px); /* Push back for depth */
+  transform: translateZ(-20px); /* 向后退，制造深度感 */
   color: var(--muted);
 }
 
 .track__content {
-  margin-top: auto; /* Push to bottom initially, but layout forces it up */
+  margin-top: auto;
   margin-bottom: var(--space-lg);
   position: relative;
   z-index: 1;
@@ -251,7 +271,7 @@ useScrollReveal(sectionRef)
   transition: transform 0.4s ease;
 }
 
-/* Keywords - High Lift */
+/* 关键词 - 高悬浮 */
 .track__keywords {
   display: flex;
   flex-wrap: wrap;
@@ -271,15 +291,15 @@ useScrollReveal(sectionRef)
 }
 
 .track-card:hover .track__keywords {
-  transform: translateZ(30px); /* Significant lift */
+  transform: translateZ(30px); /* 显著前凸 */
 }
 
 .track-card:hover .track__keywords span {
   border-color: var(--divider);
-  background: var(--bg); /* Opaque bg to pop against grid */
+  background: var(--bg); /* 不透明背景，突出显示 */
 }
 
-/* Footer - Medium Lift */
+/* 底部标签 - 中等悬浮 */
 .track__footer {
   border-top: 1px solid var(--divider);
   padding-top: var(--space-sm);
@@ -288,14 +308,14 @@ useScrollReveal(sectionRef)
   align-items: center;
   position: relative;
   z-index: 2;
-  background-color: var(--bg-elevated); /* Ensure legibility over grid */
+  background-color: var(--bg-elevated); /* 保证可读性 */
   transform: translateZ(0);
   transition: transform 0.4s ease, border-color 0.4s ease;
 }
 
 .track-card:hover .track__footer {
   transform: translateZ(15px);
-  border-color: transparent; /* Detach nicely */
+  border-color: transparent; /* 分离边框 */
 }
 
 .track__label {
@@ -309,12 +329,12 @@ useScrollReveal(sectionRef)
   color: var(--text);
 }
 
-/* Staggered Transitions for "Organic" feel */
+/* 错峰动画，模拟“有机”感 */
 .track-card:hover .track__title { transform: translateZ(10px); }
 .track-card:hover .track__position { transform: translateZ(10px); }
 .track-card:hover .track__desc { transform: translateZ(5px); }
 
-/* Responsive: Disable 3D on touch */
+/* 响应式: 触摸屏禁用 3D */
 @media (hover: none) {
   .track-card {
     transform: none !important;
@@ -323,7 +343,7 @@ useScrollReveal(sectionRef)
     transform: none !important;
   }
   .track-card::before {
-    opacity: 0.05; /* Always show faint grid on mobile */
+    opacity: 0.05; /* 移动端常驻微弱网格 */
   }
 }
 
