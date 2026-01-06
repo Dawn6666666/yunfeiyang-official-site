@@ -13,7 +13,7 @@
 
 <script setup lang="ts">
 const title = '云飞扬社团 | We Code the Future'
-const description = 'Student Tech Community established in 2014. Focused on Cloud, AI, and Software Development. Guided by Prof. Chen Ke.'
+const description = '成立于2014年的学生科技社团，专注于云计算、AI与现代软件开发。'
 const url = 'https://yunfeiyang.club'
 const image = 'https://yunfeiyang.club/og-image.png'
 

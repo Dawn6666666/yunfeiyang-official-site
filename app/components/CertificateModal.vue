@@ -1,28 +1,30 @@
 <template>
-  <div class="cert-modal" role="dialog" aria-modal="true" @keydown.esc="$emit('close')">
-    <div class="cert-modal__backdrop" @click="$emit('close')"></div>
-    
-    <div class="cert-modal__content" tabindex="0" ref="modalContent">
-      <button class="cert-modal__close" @click="$emit('close')" aria-label="Close modal">
-        &times;
-      </button>
+  <Teleport to="body">
+    <div class="cert-modal" role="dialog" aria-modal="true" @keydown.esc="$emit('close')">
+      <div class="cert-modal__backdrop" @click="$emit('close')"></div>
       
-      <div class="cert-modal__body">
-        <div class="cert-modal__image-wrapper">
-          <img :src="cert.image" :alt="cert.title" class="cert-modal__image" />
-        </div>
+      <div class="cert-modal__content" tabindex="0" ref="modalContent">
+        <button class="cert-modal__close" @click="$emit('close')" aria-label="Close modal">
+          &times;
+        </button>
         
-        <div class="cert-modal__info">
-          <div class="cert-modal__header">
-            <span class="cert-modal__tag">{{ cert.year }}</span>
-            <span class="cert-modal__tag">{{ cert.award }}</span>
+        <div class="cert-modal__body">
+          <div class="cert-modal__image-wrapper">
+            <img :src="cert.image" :alt="cert.title" class="cert-modal__image" />
           </div>
-          <h3 class="cert-modal__title">{{ cert.title }}</h3>
-          <p class="cert-modal__desc">{{ cert.description }}</p>
+          
+          <div class="cert-modal__info">
+            <div class="cert-modal__header">
+              <span class="cert-modal__tag">{{ cert.year }}</span>
+              <span class="cert-modal__tag">{{ cert.award }}</span>
+            </div>
+            <h3 class="cert-modal__title">{{ cert.title }}</h3>
+            <p class="cert-modal__desc">{{ cert.description }}</p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </Teleport>
 </template>
 
 <script setup lang="ts">

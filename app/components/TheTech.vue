@@ -2,95 +2,115 @@
   <section id="tech" class="tech-section" ref="sectionRef">
     <div class="tech__container">
       
-      <!-- 头部介绍 -->
+      <!-- Section Header -->
       <header class="tech__header reveal">
-        <h2 class="tech__title">技术领航.</h2>
+        <h2 class="tech__title">Tech Tracks.</h2>
         <div class="tech__sub">
-          <p class="tech__subtitle">寻找属于你的赛道。</p>
-          <p class="tech__quote">"我们不只是学习语言，我们掌握领域。"</p>
+          <p class="tech__subtitle">软件工程专业核心方向。</p>
+          <p class="tech__quote">"云飞扬社团汇聚了软件工程及相关专业的优秀学生，<br>共同探索前沿技术。"</p>
         </div>
       </header>
       
-      <!-- 技术网格 (交错动画) -->
+      <!-- Grid (Staggered Reveal) -->
       <div class="track-grid reveal-stagger">
         
-        <!-- Track 1: 云计算 (Cloud) -->
+        <!-- Track 1: Cloud Computing -->
         <div class="track-card">
           <span class="track__number">01</span>
           <div class="track__content">
-            <h3 class="track__title">云计算 & 大数据</h3>
-            <p class="track__position">数字基座 (Infrastructure)</p>
-            <p class="track__desc">构建支撑现代互联网的可扩展基础设施与数据平台。</p>
+            <h3 class="track__title">云计算</h3>
+            <p class="track__position">Cloud Computing</p>
+            <p class="track__desc">构建高可用、可扩展的云端基础设施，掌握容器化与微服务架构。</p>
             <div class="track__keywords">
               <span>Kubernetes</span>
               <span>Docker</span>
-              <span>Linux</span>
-              <span>虚拟化</span>
+              <span>Go</span>
+              <span>Microservices</span>
             </div>
           </div>
           <div class="track__footer">
             <span class="track__label">成长目标</span>
-            <span class="track__goal">系统架构师</span>
+            <span class="track__goal">云架构师</span>
           </div>
         </div>
 
-        <!-- Track 2: 人工智能 (AI) -->
+        <!-- Track 2: Mobile App Dev -->
         <div class="track-card">
           <span class="track__number">02</span>
           <div class="track__content">
-            <h3 class="track__title">人工智能</h3>
-            <p class="track__position">技术前沿 (The Frontier)</p>
-            <p class="track__desc">探索深度学习、大模型代理 (Agents) 与智能算法的边界。</p>
+            <h3 class="track__title">移动应用开发</h3>
+            <p class="track__position">Mobile App Development</p>
+            <p class="track__desc">打造极致体验的原生与跨平台移动应用，连接数字世界与指尖。</p>
             <div class="track__keywords">
-              <span>Python</span>
-              <span>PyTorch</span>
-              <span>RAG</span>
-              <span>LLM</span>
+              <span>Flutter</span>
+              <span>Swift</span>
+              <span>Kotlin</span>
+              <span>HarmonyOS</span>
             </div>
           </div>
           <div class="track__footer">
             <span class="track__label">成长目标</span>
-            <span class="track__goal">算法工程师</span>
+            <span class="track__goal">移动开发工程师</span>
           </div>
         </div>
 
-        <!-- Track 3: 软件开发 (Dev) -->
+        <!-- Track 3: Intelligent Software -->
         <div class="track-card">
           <span class="track__number">03</span>
           <div class="track__content">
-            <h3 class="track__title">软件工程</h3>
-            <p class="track__position">全栈创造 (Full Stack)</p>
-            <p class="track__desc">从后端高并发服务到精美的前端交互，打造完整应用。</p>
+            <h3 class="track__title">智能软件开发</h3>
+            <p class="track__position">Intelligent Software</p>
+            <p class="track__desc">融合 AI 技术的下一代软件工程，探索大模型与智能体的应用落地。</p>
             <div class="track__keywords">
-              <span>Java/Spring</span>
-              <span>Vue/Nuxt</span>
-              <span>MySQL</span>
-              <span>Design</span>
+              <span>LLM</span>
+              <span>Agents</span>
+              <span>RAG</span>
+              <span>Python</span>
             </div>
           </div>
           <div class="track__footer">
             <span class="track__label">成长目标</span>
-            <span class="track__goal">全栈开发者</span>
+            <span class="track__goal">AI 应用工程师</span>
           </div>
         </div>
 
-        <!-- Track 4: 智能硬件 (IoT) - 新增 -->
+        <!-- Track 4: Industrial Digital Intelligence -->
         <div class="track-card">
           <span class="track__number">04</span>
           <div class="track__content">
-            <h3 class="track__title">智能硬件 & IoT</h3>
-            <p class="track__position">虚实结合 (Integration)</p>
-            <p class="track__desc">软硬结合，赋予万物感知与互联的能力。如：智能车、智慧路灯。</p>
+            <h3 class="track__title">工业数智化</h3>
+            <p class="track__position">Industrial Digital Intelligence</p>
+            <p class="track__desc">赋能传统工业的数字化转型，构建智慧城市与物联网解决方案。</p>
             <div class="track__keywords">
-              <span>C/C++</span>
-              <span>嵌入式</span>
-              <span>传感器</span>
-              <span>智能控制</span>
+              <span>IoT</span>
+              <span>Digital Twin</span>
+              <span>Smart City</span>
+              <span>Industry 4.0</span>
             </div>
           </div>
           <div class="track__footer">
             <span class="track__label">成长目标</span>
-            <span class="track__goal">嵌入式专家</span>
+            <span class="track__goal">IoT 解决方案专家</span>
+          </div>
+        </div>
+
+        <!-- Track 5: Information Security -->
+        <div class="track-card">
+          <span class="track__number">05</span>
+          <div class="track__content">
+            <h3 class="track__title">信息安全</h3>
+            <p class="track__position">Information Security</p>
+            <p class="track__desc">守护数字世界的安全边界，不仅是防御，更是对底层原理的深刻理解。</p>
+            <div class="track__keywords">
+              <span>CTF</span>
+              <span>PenTesting</span>
+              <span>Cryptography</span>
+              <span>Network Sec</span>
+            </div>
+          </div>
+          <div class="track__footer">
+            <span class="track__label">成长目标</span>
+            <span class="track__goal">安全工程师</span>
           </div>
         </div>
 
@@ -104,7 +124,6 @@ import { ref } from 'vue'
 import { useScrollReveal } from '@/composables/useScrollReveal'
 
 const sectionRef = ref(null)
-// 启用滚动显现动画
 useScrollReveal(sectionRef)
 </script>
 
@@ -112,7 +131,7 @@ useScrollReveal(sectionRef)
 .tech-section {
   position: relative;
   z-index: 10;
-  padding: 15vh 0; /* 统一节奏 */
+  padding: 15vh 0; /* Standardized rhythm */
   background-color: var(--bg);
 }
 
@@ -122,7 +141,7 @@ useScrollReveal(sectionRef)
   padding: 0 var(--space-md);
 }
 
-/* 头部样式 */
+/* Header */
 .tech__header {
   margin-bottom: var(--space-xl);
   border-bottom: 1px solid var(--divider);
@@ -152,15 +171,14 @@ useScrollReveal(sectionRef)
 }
 
 .tech__quote {
-  font-family: var(--font-body); /* 中文引言使用 Body 字体更易读 */
-  font-size: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
   color: var(--muted);
   max-width: 400px;
   text-align: right;
-  font-style: italic;
 }
 
-/* 网格布局 */
+/* Grid */
 .track-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -168,8 +186,8 @@ useScrollReveal(sectionRef)
 }
 
 /* ─────────────────────────────────────────────────────────
-   Tech v2 Phase A: 3D 深度卡片 (Depth Card)
-   纯 CSS3 3D 变换实现
+   Tech v2 Phase A: The Depth Card
+   Pure CSS 3D Transforms
    ───────────────────────────────────────────────────────── */
 
 .track-card {
@@ -182,21 +200,23 @@ useScrollReveal(sectionRef)
   min-height: 400px;
   background-color: var(--bg-elevated);
   
-  /* 3D 引擎设置 */
+  /* 3D Engine Setup */
   transform-style: preserve-3d;
-  perspective: 1000px; /* 本地透视 */
+  perspective: 1000px; /* Local perspective for content pop */
+  transform-style: preserve-3d;
+  perspective: 1000px; /* Local perspective for content pop */
   transition: 
     border-color var(--duration-hover) var(--ease-power3-out),
     box-shadow var(--duration-hover) var(--ease-power3-out),
     transform var(--duration-hover) var(--ease-power3-out);
 }
 
-/* 蓝图背景纹理 (Hover 时显现) */
+/* Blueprint Pattern (Reveal on hover) */
 .track-card::before {
   content: '';
   position: absolute;
   inset: 0;
-  /* 工程网格纹理 */
+  /* Engineering Grid Pattern */
   background-image: 
     linear-gradient(var(--divider) 1px, transparent 1px),
     linear-gradient(90deg, var(--divider) 1px, transparent 1px);
@@ -211,15 +231,15 @@ useScrollReveal(sectionRef)
 
 .track-card:hover {
   border-color: var(--accent);
-  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5); /* 深度阴影 */
-  /* transform: translateY(-5px);  可选物理上浮 */
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5); /* Subtle depth shadow */
+  /* transform: translateY(-5px);  Optional physical lift */
 }
 
 .track-card:hover::before {
-  opacity: 0.15; /* 微妙显现纹理 */
+  opacity: 0.15; /* Reveal pattern subtly */
 }
 
-/* 内容分层 (Z轴深度) */
+/* Content Layering */
 .track__number {
   font-family: var(--font-display);
   font-size: 4rem;
@@ -228,16 +248,16 @@ useScrollReveal(sectionRef)
   line-height: 1;
   opacity: 0.5;
   transition: transform 0.5s ease, color 0.4s ease;
-  transform: translateZ(0); /* 基础层 */
+  transform: translateZ(0); /* Base layer */
 }
 
 .track-card:hover .track__number {
-  transform: translateZ(-20px); /* 向后退，制造深度感 */
+  transform: translateZ(-20px); /* Push back for depth */
   color: var(--muted);
 }
 
 .track__content {
-  margin-top: auto;
+  margin-top: auto; /* Push to bottom initially, but layout forces it up */
   margin-bottom: var(--space-lg);
   position: relative;
   z-index: 1;
@@ -271,7 +291,7 @@ useScrollReveal(sectionRef)
   transition: transform 0.4s ease;
 }
 
-/* 关键词 - 高悬浮 */
+/* Keywords - High Lift */
 .track__keywords {
   display: flex;
   flex-wrap: wrap;
@@ -291,15 +311,15 @@ useScrollReveal(sectionRef)
 }
 
 .track-card:hover .track__keywords {
-  transform: translateZ(30px); /* 显著前凸 */
+  transform: translateZ(30px); /* Significant lift */
 }
 
 .track-card:hover .track__keywords span {
   border-color: var(--divider);
-  background: var(--bg); /* 不透明背景，突出显示 */
+  background: var(--bg); /* Opaque bg to pop against grid */
 }
 
-/* 底部标签 - 中等悬浮 */
+/* Footer - Medium Lift */
 .track__footer {
   border-top: 1px solid var(--divider);
   padding-top: var(--space-sm);
@@ -308,14 +328,14 @@ useScrollReveal(sectionRef)
   align-items: center;
   position: relative;
   z-index: 2;
-  background-color: var(--bg-elevated); /* 保证可读性 */
+  background-color: var(--bg-elevated); /* Ensure legibility over grid */
   transform: translateZ(0);
   transition: transform 0.4s ease, border-color 0.4s ease;
 }
 
 .track-card:hover .track__footer {
   transform: translateZ(15px);
-  border-color: transparent; /* 分离边框 */
+  border-color: transparent; /* Detach nicely */
 }
 
 .track__label {
@@ -329,12 +349,12 @@ useScrollReveal(sectionRef)
   color: var(--text);
 }
 
-/* 错峰动画，模拟“有机”感 */
+/* Staggered Transitions for "Organic" feel */
 .track-card:hover .track__title { transform: translateZ(10px); }
 .track-card:hover .track__position { transform: translateZ(10px); }
 .track-card:hover .track__desc { transform: translateZ(5px); }
 
-/* 响应式: 触摸屏禁用 3D */
+/* Responsive: Disable 3D on touch */
 @media (hover: none) {
   .track-card {
     transform: none !important;
@@ -343,7 +363,7 @@ useScrollReveal(sectionRef)
     transform: none !important;
   }
   .track-card::before {
-    opacity: 0.05; /* 移动端常驻微弱网格 */
+    opacity: 0.05; /* Always show faint grid on mobile */
   }
 }
 
