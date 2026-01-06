@@ -3,7 +3,7 @@
     <div class="nav__container">
       
       <!-- Logo / Home Anchor -->
-      <a href="#hero" class="nav__logo" @click.prevent="scrollTo('#hero')">
+      <a href="#hero" class="nav__logo" @click.prevent="scrollTo('#hero'); toggleBlueprint()">
         YFY
       </a>
 
@@ -36,6 +36,29 @@ const scrollTo = (selector: string) => {
   }
 }
 
+const clicks = ref(0)
+let clickTimer: ReturnType<typeof setTimeout> | null = null
+
+const toggleBlueprint = () => {
+  clicks.value++
+  
+  if (clicks.value >= 5) {
+    document.body.classList.add('mode-blueprint')
+    clicks.value = 0
+    
+    // Auto turn off after 6 seconds
+    setTimeout(() => {
+      document.body.classList.remove('mode-blueprint')
+    }, 6000)
+  }
+  
+  // Reset click count if idle for 1s
+  if (clickTimer) clearTimeout(clickTimer)
+  clickTimer = setTimeout(() => {
+    clicks.value = 0
+  }, 1000)
+}
+
 onMounted(() => {
   window.addEventListener('scroll', handleScroll)
   handleScroll() // Init check
@@ -43,6 +66,7 @@ onMounted(() => {
 
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
+  if (clickTimer) clearTimeout(clickTimer)
 })
 </script>
 

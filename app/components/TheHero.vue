@@ -2,6 +2,7 @@
   <section ref="heroRef" class="hero" :class="{ 'is-scrolling': isScrolling }">
     <!-- 背景层组件 -->
     <HeroBackground />
+    <SyntaxCloud />
 
     <!-- 主内容容器 (应用视差) -->
     <div class="hero__content">
