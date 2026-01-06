@@ -4,12 +4,22 @@
    ═══════════════════════════════════════════════════════════ */
 
 :root {
-    /* 配色 */
+    /* 配色 - Dark Mode (Default) */
     --bg: #0B0D12;
-    --bg-elevated: #10141B;
+    --bg-elevated: #151922;
+    --bg-overlay: rgba(11, 13, 18, 0.85);
+
     --text: #F5F7FA;
+    --text-muted: #9AA3B2;
+    --text-faint: #4B5563;
+
     --accent: #4DA3FF;
-    --muted: #9AA3B2;
+    --accent-glow: rgba(77, 163, 255, 0.15);
+
+    --border: #1F2937;
+    --border-hover: #374151;
+    --shadow-card: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
+
     --divider: #1A1F2B;
 
     /* 动效规范 (Motion System 2.5) */
@@ -29,6 +39,27 @@
     --space-md: 2rem;
     --space-lg: 4rem;
     --space-xl: 8rem;
+}
+
+/* 配色 - Light Mode (Claude Style) */
+html.light-mode {
+    --bg: #F7F7F5;
+    --bg-elevated: #FFFFFF;
+    --bg-overlay: rgba(255, 255, 255, 0.85);
+
+    --text: #383835;
+    --text-muted: #6B6B65;
+    --text-faint: #A1A1AA;
+
+    --accent: #2563EB;
+    /* Deep Blue for contrast on light */
+    --accent-glow: rgba(37, 99, 235, 0.08);
+
+    --border: #E5E5E0;
+    --border-hover: #D4D4D0;
+    --shadow-card: 0 4px 20px -5px rgba(0, 0, 0, 0.05);
+
+    --divider: #E5E5E0;
 }
 
 *,

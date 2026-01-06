@@ -3,6 +3,12 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
 
+  runtimeConfig: {
+    public: {
+      gaId: process.env.NUXT_PUBLIC_GA_ID || 'G-PLACEHOLDER'
+    }
+  },
+
   app: {
     head: {
       title: '云飞扬社团 | We Code the Future',
@@ -17,6 +23,12 @@ export default defineNuxtConfig({
         {
           rel: 'stylesheet',
           href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap'
+        }
+      ],
+      script: [
+        {
+          innerHTML: `(function(){try{const s=localStorage.getItem('yfy-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(s==='light'||(!s&&!d))document.documentElement.classList.add('light-mode');}catch(e){}})()`,
+          type: 'text/javascript'
         }
       ]
     }

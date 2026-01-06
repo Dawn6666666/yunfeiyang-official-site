@@ -1,0 +1,42 @@
+[
+    {
+        "id": "ican-2024-gold",
+        "title": "iCAN International Innovation Contest",
+        "award": "National Second Prize",
+        "year": "2024",
+        "image": "https://placehold.co/800x600/151922/4DA3FF?text=iCAN+Award",
+        "description": "Project: Smart IoT Monitoring System. Team: Cloud Walker."
+    },
+    {
+        "id": "lanqiao-2023-first",
+        "title": "Lanqiao Cup Programming Contest",
+        "award": "Provincial First Prize",
+        "year": "2023",
+        "image": "https://placehold.co/800x600/151922/4DA3FF?text=Lanqiao+Cup",
+        "description": "Category: C/C++ Development. Individual: Zhang San."
+    },
+    {
+        "id": "challenge-cup-silver",
+        "title": "Challenge Cup",
+        "award": "Silver Medal",
+        "year": "2023",
+        "image": "https://placehold.co/800x600/151922/4DA3FF?text=Challenge+Cup",
+        "description": "Project: AI-driven Education Platform."
+    },
+    {
+        "id": "internet-plus-bronze",
+        "title": "Internet+ Competition",
+        "award": "Bronze Medal",
+        "year": "2022",
+        "image": "https://placehold.co/800x600/151922/4DA3FF?text=Internet%2B",
+        "description": "Innovation Track."
+    },
+    {
+        "id": "math-modeling-2022",
+        "title": "Mathematical Modeling",
+        "award": "National Second Prize",
+        "year": "2022",
+        "image": "https://placehold.co/800x600/151922/4DA3FF?text=Math+Model",
+        "description": "Problem B: Drone Routing Optimization."
+    }
+]

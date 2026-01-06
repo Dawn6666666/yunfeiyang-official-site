@@ -1,75 +1,64 @@
-# Nuxt Minimal Starter
+# 云飞扬社团官网 (Yun Fei Yang Official Site)
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+> "We Code the Future" - Great ideas start with a single line of code.
 
-## Setup
+![Preview](https://yunfeiyang.club/og-image.png)
 
-Make sure to install dependencies:
+## 🚀 Project Overview
+
+This is the official website for **Yun Fei Yang (YFY)**, a student technology community established in 2014. The site showcases our projects, achievements, and technical culture.
+
+Built with **Nuxt 3**, aimed at Awwwards-level aesthetics and performance.
+
+### ✨ Key Features (v3.0)
+
+- **🎨 Dual Theme System**: Seamless Dark/Light mode switching with persisted state (`useTheme`).
+- **🏆 Infinite Certificate Wall**: High-performance, velocity-responsive marquee for displaying awards.
+- **✨ Motion Design**:
+  - Scroll-driven reveal animations.
+  - Interactive hover effects.
+  - Smooth backdrop-filter navigation.
+- **📝 Join Application**: Integrated application form with validation and resilient fallback strategies.
+- **📊 Analytics & SEO**:
+  - GA4 integration (`gtag.client.ts`).
+  - Full SEO optimization with JSON-LD Schema and Open Graph tags.
+
+## 🛠 Tech Stack
+
+- **Framework**: [Nuxt 3](https://nuxt.com) (Vue 3, Nitro)
+- **Styling**: Vanilla CSS (CSS Variables, Modern Layouts)
+- **Language**: TypeScript
+- **Deployment**: Static / Serverless compatible
+
+## 📦 Setup & Development
 
 ```bash
-# npm
+# Install dependencies
 npm install
 
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
+# Start development server
 npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
+Visit `http://localhost:3000` to view the site.
 
-Build the application for production:
+## 🏗 Build & Deploy
 
 ```bash
-# npm
+# Build for production
 npm run build
 
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
+# Preview locally
 npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## 📁 Project Structure
+
+- `app/components`: Reusable UI components (Hero, Nav, CertificateWall, etc.)
+- `app/composables`: Shared logic (`useTheme`, `useScrollReveal`)
+- `app/assets/css`: Global styles and variables (`main.css`)
+- `content`: Static data sources (JSON)
+
+## 📄 License
+
+MIT License © 2024 Yun Fei Yang Club
