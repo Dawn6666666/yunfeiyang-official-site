@@ -7,7 +7,7 @@
 
     <!-- 辅助信息 -->
     <div class="hero__meta" :class="{ animate: isLoaded }">
-      <span>Cloud · AI · Software</span>
+      <span>Yunfeiyang Club</span>
       <span class="hero__divider">|</span>
       <span>Guided by Prof. Chen Ke</span>
     </div>
@@ -17,7 +17,7 @@
       <a href="#join" class="btn btn--primary" @click.prevent="scrollTo('#join')">
         立即加入
       </a>
-      <a href="#projects" class="btn btn--secondary" @click.prevent="scrollTo('#projects')">
+      <a href="#impact" class="btn btn--secondary" @click.prevent="scrollTo('#impact')">
         查看项目
       </a>
     </div>

@@ -12,6 +12,10 @@
 </template>
 
 <script setup lang="ts">
+import '@/assets/css/main.css'
+import '@/assets/css/blueprint.css'
+import '@fontsource/inter/400.css'
+
 const title = '云飞扬社团 | We Code the Future'
 const description = '成立于2014年的学生科技社团，专注于云计算、AI与现代软件开发。'
 const url = 'https://yunfeiyang.club'

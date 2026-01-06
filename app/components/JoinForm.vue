@@ -32,14 +32,11 @@
               <img src="/images/qr-group.png" alt="迎新群二维码" class="qr-img" />
             </div>
             <div class="qr-info">
-              <h4 class="qr-title">扫码加入迎新群</h4>
+              <h4 class="qr-title">QQ扫码加入迎新群</h4>
               <p class="qr-desc">
                 与学长学姐直接交流<br>
                 获取一手招新资讯
               </p>
-              <button class="btn-text" @click="openPoster('front')">
-                查看招新海报 &rarr;
-              </button>
             </div>
           </div>
         </div>
@@ -51,8 +48,6 @@
         <form 
           class="join__form" 
           @submit.prevent="handleSubmit"
-          action="https://formspree.io/f/mqakpeag" 
-          method="POST"
         >
           <!-- Name -->
           <div class="form-group">
@@ -87,11 +82,11 @@
             <label for="track">感兴趣的方向</label>
             <div class="select-wrapper">
               <select id="track" v-model="form.track">
-                <option value="dev">软件开发 (Software Development)</option>
-                <option value="design">UI/UX 设计 (UI/UX Design)</option>
-                <option value="ai">人工智能 (AI & Algorithms)</option>
-                <option value="hardware">物联网与硬件 (IoT & Hardware)</option>
-                <option value="media">新媒体运营 (New Media)</option>
+                <option value="cloud">云计算与后端 (Cloud & Backend)</option>
+                <option value="frontend">前端与移动开发 (Frontend & Mobile)</option>
+                <option value="ai">人工智能与大数据 (AI & Data Science)</option>
+                <option value="security">网络与信息安全 (Cybersecurity)</option>
+                <option value="iot">智能技术与嵌入式 (IoT & Embedded)</option>
               </select>
               <svg class="select-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
             </div>
@@ -123,18 +118,13 @@
 
     </div>
 
-    <!-- Image Modal -->
-    <ImageModal 
-      :is-open="modalState.isOpen" 
-      :src="modalState.src" 
-      @close="closeModal" 
-    />
+
   </section>
 </template>
 
 <script setup lang="ts">
+import emailjs from '@emailjs/browser'
 import { ref, reactive } from 'vue'
-import ImageModal from './ImageModal.vue'
 import { useScrollReveal } from '@/composables/useScrollReveal'
 
 const sectionRef = ref(null)
@@ -144,9 +134,17 @@ useScrollReveal(sectionRef)
 const form = reactive({
   name: '',
   email: '',
-  track: 'dev',
+  track: 'cloud',
   intro: ''
 })
+
+const trackMap = {
+  cloud: '云计算与后端 (Cloud & Backend)',
+  frontend: '前端与移动开发 (Frontend & Mobile)',
+  ai: '人工智能与大数据 (AI & Data Science)',
+  security: '网络与信息安全 (Cybersecurity)',
+  iot: '智能技术与嵌入式 (IoT & Embedded)'
+}
 
 const errors = reactive({
   name: '',
@@ -166,7 +164,7 @@ const validateField = (field: 'name' | 'email') => {
   }
 }
 
-const handleSubmit = async (e: Event) => {
+const handleSubmit = async () => {
   // Validate all
   validateField('name')
   validateField('email')
@@ -176,50 +174,35 @@ const handleSubmit = async (e: Event) => {
   isSubmitting.value = true
   submitStatus.value = null
 
-  // Simulate submission or use Formspree via fetch
-  // Use Formspree fallback behavior:
-  // If we wanted pure AJAX:
   try {
-    const response = await fetch('https://formspree.io/f/mqakpeag', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(form)
-    })
-    
-    if (response.ok) {
-      submitStatus.value = { type: 'success', message: '申请发送成功！' }
-      form.name = ''
-      form.email = ''
-      form.intro = ''
-    } else {
-      throw new Error('Network response was not ok')
+    const templateParams = {
+      name: form.name,
+      email: form.email,
+      track: trackMap[form.track as keyof typeof trackMap] || form.track,
+      message: form.intro, // Mapped per requirements
+      time: new Date().toLocaleString()
     }
+
+    await emailjs.send(
+      'service_v8r8zcm',
+      'template_un1jzsr',
+      templateParams,
+      'ug2f__29OIaIFUHV7'
+    )
+    
+    submitStatus.value = { type: 'success', message: '申请发送成功！我们会尽快联系你。' }
+    
+    // Reset form
+    form.name = ''
+    form.email = ''
+    form.intro = ''
+    
   } catch (error) {
-    // Fallback to mailto if API fails (or dev mode without network)
-    window.location.href = `mailto:contact@yunfeiyang.club?subject=Application from ${form.name}&body=${encodeURIComponent(JSON.stringify(form, null, 2))}`
-    submitStatus.value = { type: 'success', message: '已唤起邮件客户端，请发送邮件。' }
+    console.error('EmailJS Error:', error)
+    submitStatus.value = { type: 'error', message: '发送失败，请稍后重试或直接联系QQ群管理员。' }
   } finally {
     isSubmitting.value = false
   }
-}
-
-// --- Modal Logic ---
-const modalState = reactive({
-  isOpen: false,
-  src: ''
-})
-
-const openPoster = (type: 'front' | 'back' | 'studio') => {
-  if (type === 'front') modalState.src = '/images/poster-recruit-front.png'
-  if (type === 'back') modalState.src = '/images/poster-recruit-back.png'
-  if (type === 'studio') modalState.src = '/images/poster-studio.png'
-  modalState.isOpen = true
-}
-
-const closeModal = () => {
-  modalState.isOpen = false
 }
 </script>
 
@@ -234,6 +217,11 @@ const closeModal = () => {
 .join__container {
   max-width: 1200px;
   margin: 0 auto;
+  
+  /* 2K Optimization */
+  @media (min-width: 1921px) {
+    max-width: 2000px;
+  }
   padding: 0 var(--space-md);
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -305,11 +293,18 @@ const closeModal = () => {
   background: #fff;
   padding: 8px;
   border-radius: 8px;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.qr-wrapper:hover {
+  transform: scale(1.35);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
 .qr-img {
-  width: 100px;
-  height: 100px;
+  width: 120px; /* Slightly larger */
+  height: 120px;
   display: block;
 }
 

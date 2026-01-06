@@ -2,6 +2,7 @@
   <section ref="heroRef" class="hero" :class="{ 'is-scrolling': isScrolling }">
     <!-- 背景层组件 -->
     <HeroBackground />
+    <SyntaxCloud />
 
     <!-- 主内容容器 (应用视差) -->
     <div class="hero__content">
@@ -150,6 +151,12 @@ onUnmounted(() => {
   margin: 0 auto;
   padding: 0 var(--space-lg);
   padding-left: 8vw;
+  
+  /* 2K Optimization */
+  @media (min-width: 1921px) {
+    max-width: 2000px;
+    padding-left: 10vw; /* Slightly more optical balance */
+  }
   transform-style: preserve-3d;
   
   /* Magnetic Tilt (CSS Driven) */
