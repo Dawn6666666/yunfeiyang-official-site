@@ -12,6 +12,7 @@
         <a href="#about" class="nav__link" @click.prevent="scrollTo('#about')">About</a>
         <a href="#tech" class="nav__link" @click.prevent="scrollTo('#tech')">Tech</a>
         <a href="#impact" class="nav__link" @click.prevent="scrollTo('#impact')">Impact</a>
+        <a href="#join" class="nav__link" @click.prevent="scrollTo('#join')">Join</a>
         <ThemeToggle />
       </div>
 
