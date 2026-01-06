@@ -62,6 +62,11 @@ useScrollReveal(sectionRef)
 .about__container {
   max-width: 800px; /* Reading width */
   margin: 0 auto;
+  
+  /* 2K Optimization: Reading width slightly increased */
+  @media (min-width: 1921px) {
+    max-width: 1000px;
+  }
   padding: 0 var(--space-md);
   display: flex;
   flex-direction: column;
@@ -70,7 +75,8 @@ useScrollReveal(sectionRef)
 
 .about__anchor {
   font-family: var(--font-display);
-  font-size: 1.5rem;
+  font-size: clamp(2rem, 4vw, 3rem); /* Much larger section title */
+  font-weight: 700;
   color: var(--muted);
   opacity: 0.5;
   margin-bottom: 5vh;

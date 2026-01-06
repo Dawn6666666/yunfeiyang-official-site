@@ -217,6 +217,11 @@ const handleSubmit = async () => {
 .join__container {
   max-width: 1200px;
   margin: 0 auto;
+  
+  /* 2K Optimization */
+  @media (min-width: 1921px) {
+    max-width: 2000px;
+  }
   padding: 0 var(--space-md);
   display: grid;
   grid-template-columns: 1fr 1fr;

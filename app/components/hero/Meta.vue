@@ -7,7 +7,7 @@
 
     <!-- 辅助信息 -->
     <div class="hero__meta" :class="{ animate: isLoaded }">
-      <span>Cloud · AI · Software</span>
+      <span>Yunfeiyang Club</span>
       <span class="hero__divider">|</span>
       <span>Guided by Prof. Chen Ke</span>
     </div>

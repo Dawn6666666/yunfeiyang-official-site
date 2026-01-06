@@ -32,3 +32,37 @@
     opacity: 0.8;
     mix-blend-mode: multiply;
 }
+
+/* Force transparency on containers to show grid */
+.mode-blueprint section,
+.mode-blueprint footer,
+.mode-blueprint .join__form-wrapper,
+.mode-blueprint .qr-card,
+.mode-blueprint .track-card,
+.mode-blueprint .project-item,
+.mode-blueprint .nav-pill {
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+
+/* Inputs need to be readable but styled */
+.mode-blueprint input,
+.mode-blueprint textarea,
+.mode-blueprint select {
+    background-color: rgba(255, 255, 255, 0.3) !important;
+    border-color: var(--text-muted) !important;
+    border-radius: 0 !important;
+    /* Engineering feel */
+}
+
+/* Fix text contrast if needed */
+.mode-blueprint h1,
+.mode-blueprint h2,
+.mode-blueprint h3,
+.mode-blueprint p,
+.mode-blueprint span,
+.mode-blueprint a,
+.mode-blueprint label {
+    color: var(--text) !important;
+    text-shadow: none !important;
+}

@@ -56,8 +56,8 @@ onUnmounted(() => {
 }
 
 .buffer__text {
-  font-family: var(--font-body);
-  font-size: 0.75rem; /* 12px */
+  font-family: var(--font-display); /* Switch to display font for impact */
+  font-size: clamp(1.25rem, 2vw, 1.5rem); /* Significantly larger */
   color: var(--muted);
   opacity: 0;
   transform: translateY(10px);

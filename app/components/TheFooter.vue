@@ -3,18 +3,61 @@
     <div class="footer__container">
       
       <div class="footer__main">
-        <span class="footer__brand">云飞扬社团 YFY</span>
+        <span class="footer__brand">Yunfeiyang Club</span>
         <span class="footer__divider">·</span>
         <span class="footer__info">Est. 2014</span>
         <span class="footer__divider">·</span>
-        <span class="footer__info">Guided by Prof. Chen Ke</span>
+        <span 
+          class="footer__info footer__dev" 
+          @click="toggleBlueprint"
+          title="Click 5 times"
+        >
+          Code by Dawn
+        </span>
       </div>
 
-      <p class="footer__tagline">We build by learning.</p>
+      <div class="footer__sub">
+        <p class="footer__tagline">We build by learning.</p>
+      </div>
 
     </div>
   </footer>
 </template>
+
+<script setup lang="ts">
+import { ref, onUnmounted } from 'vue'
+
+const clicks = ref(0)
+let clickTimer: ReturnType<typeof setTimeout> | null = null
+let revertTimer: ReturnType<typeof setTimeout> | null = null
+
+const toggleBlueprint = () => {
+  clicks.value++
+  
+  if (clicks.value >= 5) {
+    // Enable Blueprint
+    document.body.classList.add('mode-blueprint')
+    clicks.value = 0
+    
+    // Auto revert after 10s
+    if (revertTimer) clearTimeout(revertTimer)
+    revertTimer = setTimeout(() => {
+      document.body.classList.remove('mode-blueprint')
+    }, 10000)
+  }
+  
+  // Reset clicks if idle
+  if (clickTimer) clearTimeout(clickTimer)
+  clickTimer = setTimeout(() => {
+    clicks.value = 0
+  }, 1000)
+}
+
+onUnmounted(() => {
+  if (clickTimer) clearTimeout(clickTimer)
+  if (revertTimer) clearTimeout(revertTimer)
+})
+</script>
 
 <style scoped>
 .footer {
@@ -32,6 +75,11 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 var(--space-md);
+  
+  /* 2K Optimization */
+  @media (min-width: 1921px) {
+    max-width: 2000px;
+  }
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
@@ -44,6 +92,14 @@
   justify-content: center;
   gap: 0.5em;
   align-items: center;
+}
+
+.footer__sub {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75em;
+  font-size: 0.75rem;
 }
 
 .footer__brand {
@@ -61,6 +117,17 @@
   opacity: 0.5;
 }
 
+.footer__dev {
+  opacity: 0.4;
+  cursor: help; /* Hint at interaction */
+  transition: opacity 0.2s;
+}
+
+.footer__dev:hover {
+  opacity: 1;
+  color: var(--accent);
+}
+
 @media (max-width: 768px) {
   .footer__main {
     flex-direction: column;
@@ -69,6 +136,11 @@
   
   .footer__divider {
     display: none;
+  }
+  
+  /* Keep sub on one line if possible, or stack */
+  .footer__sub {
+    flex-direction: row;
   }
 }
 </style>

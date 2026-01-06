@@ -39,27 +39,44 @@
     --space-md: 2rem;
     --space-lg: 4rem;
     --space-xl: 8rem;
+
+    /* Nav Pill (Dark Default) */
+    --bg-nav-pill: rgba(20, 20, 24, 0.6);
+    --border-nav-pill: rgba(255, 255, 255, 0.1);
+    --shadow-nav-pill: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 /* 配色 - Light Mode (Claude Style) */
 html.light-mode {
-    --bg: #F7F7F5;
-    --bg-elevated: #FFFFFF;
-    --bg-overlay: rgba(255, 255, 255, 0.85);
+    --bg: #FBFBF9;
+    /* Warm Off-White / Paper */
+    --bg-elevated: #F0EFEA;
+    /* Slightly Darker Warm Gray */
+    --bg-overlay: rgba(251, 251, 249, 0.9);
 
-    --text: #383835;
-    --text-muted: #6B6B65;
+    --text: #333333;
+    /* Deep Charcoal */
+    --text-muted: #66605B;
+    /* Warm Taupe */
     --text-faint: #A1A1AA;
 
-    --accent: #2563EB;
-    /* Deep Blue for contrast on light */
-    --accent-glow: rgba(37, 99, 235, 0.08);
+    --accent: #DA7756;
+    /* Burnt Orange / Warm Clay */
+    --accent-glow: rgba(218, 119, 86, 0.15);
 
-    --border: #E5E5E0;
-    --border-hover: #D4D4D0;
-    --shadow-card: 0 4px 20px -5px rgba(0, 0, 0, 0.05);
+    --border: #E0DED7;
+    --border-hover: #CDCAC0;
+    --shadow-card: 0 4px 12px -2px rgba(0, 0, 0, 0.08);
 
-    --divider: #E5E5E0;
+    --divider: #E0DED7;
+
+    /* Typography Overrides for Light Mode */
+    --font-display: 'Merriweather', serif;
+
+    /* Nav Pill (Light Mode) */
+    --bg-nav-pill: rgba(255, 255, 255, 0.7);
+    --border-nav-pill: var(--border);
+    --shadow-nav-pill: 0 2px 4px -1px rgba(0, 0, 0, 0.05), 0 4px 12px -2px rgba(0, 0, 0, 0.05);
 }
 
 *,

@@ -97,6 +97,12 @@ const handleMouseMove = (e: MouseEvent) => {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 var(--space-md);
+  
+  /* 2K Optimization */
+  @media (min-width: 1921px) {
+    max-width: 2000px;
+    padding: 0 var(--space-lg);
+  }
 }
 
 /* Header */
