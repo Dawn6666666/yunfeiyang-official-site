@@ -2,7 +2,7 @@
 
 > "We Code the Future" - 伟大的想法始于单行代码。
 
-![Preview](https://yunfeiyang.club/og-image.png)
+![Preview](public/images/home-preview.png)
 
 ### 🔗 在线演示 (Live Demo)
 👉 **[https://dawn6666666.github.io/yunfeiyang-official-site/](https://dawn6666666.github.io/yunfeiyang-official-site/)**
