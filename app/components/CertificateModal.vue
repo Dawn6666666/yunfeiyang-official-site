@@ -10,7 +10,7 @@
         
         <div class="cert-modal__body">
           <div class="cert-modal__image-wrapper">
-            <img :src="cert.image" :alt="cert.title" class="cert-modal__image" />
+            <img :src="resolvePath(cert.image)" :alt="cert.title" class="cert-modal__image" />
           </div>
           
           <div class="cert-modal__info">
@@ -40,6 +40,14 @@ const props = defineProps<{
   }
 }>()
 defineEmits(['close'])
+
+const config = useRuntimeConfig()
+const resolvePath = (path: string) => {
+  if (!path) return ''
+  if (path.startsWith('http')) return path
+  const cleanPath = path.startsWith('/') ? path.slice(1) : path
+  return `${config.app.baseURL}${cleanPath}`
+}
 
 const modalContent = ref<HTMLElement | null>(null)
 let lastActiveElement: HTMLElement | null = null
