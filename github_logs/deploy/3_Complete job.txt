@@ -1,0 +1,31 @@
+﻿2026-01-07T03:39:11.5187412Z ##[debug]Starting: Complete job
+2026-01-07T03:39:11.5189411Z Evaluate and set environment url
+2026-01-07T03:39:11.5193417Z ##[debug]Evaluating: steps.deployment.outputs.page_url
+2026-01-07T03:39:11.5193872Z ##[debug]Evaluating Index:
+2026-01-07T03:39:11.5194176Z ##[debug]..Evaluating Index:
+2026-01-07T03:39:11.5194471Z ##[debug]....Evaluating Index:
+2026-01-07T03:39:11.5194749Z ##[debug]......Evaluating steps:
+2026-01-07T03:39:11.5195112Z ##[debug]......=> Object
+2026-01-07T03:39:11.5195463Z ##[debug]......Evaluating String:
+2026-01-07T03:39:11.5195761Z ##[debug]......=> 'deployment'
+2026-01-07T03:39:11.5196139Z ##[debug]....=> Object
+2026-01-07T03:39:11.5196433Z ##[debug]....Evaluating String:
+2026-01-07T03:39:11.5196708Z ##[debug]....=> 'outputs'
+2026-01-07T03:39:11.5196983Z ##[debug]..=> Object
+2026-01-07T03:39:11.5197256Z ##[debug]..Evaluating String:
+2026-01-07T03:39:11.5197533Z ##[debug]..=> 'page_url'
+2026-01-07T03:39:11.5198002Z ##[debug]=> 'https://dawn6666666.github.io/yunfeiyang-official-site/'
+2026-01-07T03:39:11.5198616Z ##[debug]Result: 'https://dawn6666666.github.io/yunfeiyang-official-site/'
+2026-01-07T03:39:11.5199582Z Evaluated environment url: https://dawn6666666.github.io/yunfeiyang-official-site/
+2026-01-07T03:39:11.5201094Z Uploading runner diagnostic logs
+2026-01-07T03:39:11.5212806Z ##[debug]Starting diagnostic file upload.
+2026-01-07T03:39:11.5213206Z ##[debug]Setting up diagnostic log folders.
+2026-01-07T03:39:11.5215258Z ##[debug]Creating diagnostic log files folder.
+2026-01-07T03:39:11.5223355Z ##[debug]Copying 1 worker diagnostic logs.
+2026-01-07T03:39:11.5231122Z ##[debug]Copying 1 runner diagnostic logs.
+2026-01-07T03:39:11.5232536Z ##[debug]Zipping diagnostic files.
+2026-01-07T03:39:11.5297485Z ##[debug]Uploading diagnostic metadata file.
+2026-01-07T03:39:11.5329168Z ##[debug]Diagnostic file upload complete.
+2026-01-07T03:39:11.5329856Z Completed runner diagnostic log upload
+2026-01-07T03:39:11.5330177Z Cleaning up orphan processes
+2026-01-07T03:39:11.5601280Z ##[debug]Finishing: Complete job

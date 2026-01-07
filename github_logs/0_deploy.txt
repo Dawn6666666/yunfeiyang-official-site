@@ -1,0 +1,153 @@
+﻿2026-01-07T03:39:04.2753841Z ##[debug]Starting: deploy
+2026-01-07T03:39:04.2779824Z ##[debug]Cleaning runner temp folder: /home/runner/work/_temp
+2026-01-07T03:39:04.2910222Z ##[debug]Starting: Set up job
+2026-01-07T03:39:04.2911781Z Current runner version: '2.330.0'
+2026-01-07T03:39:04.2942362Z ##[group]Runner Image Provisioner
+2026-01-07T03:39:04.2943411Z Hosted Compute Agent
+2026-01-07T03:39:04.2944399Z Version: 20251211.462
+2026-01-07T03:39:04.2945313Z Commit: 6cbad8c2bb55d58165063d031ccabf57e2d2db61
+2026-01-07T03:39:04.2946424Z Build Date: 2025-12-11T16:28:49Z
+2026-01-07T03:39:04.2947486Z Worker ID: {530ad5a6-dd47-458d-80eb-45e38fea90ed}
+2026-01-07T03:39:04.2948479Z ##[endgroup]
+2026-01-07T03:39:04.2949248Z ##[group]Operating System
+2026-01-07T03:39:04.2950004Z Ubuntu
+2026-01-07T03:39:04.2950799Z 24.04.3
+2026-01-07T03:39:04.2951489Z LTS
+2026-01-07T03:39:04.2952417Z ##[endgroup]
+2026-01-07T03:39:04.2953326Z ##[group]Runner Image
+2026-01-07T03:39:04.2954191Z Image: ubuntu-24.04
+2026-01-07T03:39:04.2954971Z Version: 20251215.174.1
+2026-01-07T03:39:04.2957107Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20251215.174/images/ubuntu/Ubuntu2404-Readme.md
+2026-01-07T03:39:04.2959329Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20251215.174
+2026-01-07T03:39:04.2960993Z ##[endgroup]
+2026-01-07T03:39:04.2963006Z ##[group]GITHUB_TOKEN Permissions
+2026-01-07T03:39:04.2965976Z Metadata: read
+2026-01-07T03:39:04.2966860Z Pages: write
+2026-01-07T03:39:04.2967748Z ##[endgroup]
+2026-01-07T03:39:04.2970665Z Secret source: Actions
+2026-01-07T03:39:04.2972714Z ##[debug]Primary repository: Dawn6666666/yunfeiyang-official-site
+2026-01-07T03:39:04.2974118Z Prepare workflow directory
+2026-01-07T03:39:04.3127631Z ##[debug]Creating pipeline directory: '/home/runner/work/yunfeiyang-official-site'
+2026-01-07T03:39:04.3131182Z ##[debug]Creating workspace directory: '/home/runner/work/yunfeiyang-official-site/yunfeiyang-official-site'
+2026-01-07T03:39:04.3133393Z ##[debug]Update context data
+2026-01-07T03:39:04.3137051Z ##[debug]Evaluating job-level environment variables
+2026-01-07T03:39:04.3428658Z ##[debug]Evaluating job container
+2026-01-07T03:39:04.3433925Z ##[debug]Evaluating job service containers
+2026-01-07T03:39:04.3437620Z ##[debug]Evaluating job defaults
+2026-01-07T03:39:04.3475678Z Prepare all required actions
+2026-01-07T03:39:04.3532892Z Getting action download info
+2026-01-07T03:39:04.6496678Z Download action repository 'actions/deploy-pages@v4' (SHA:d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e)
+2026-01-07T03:39:05.1248497Z ##[debug]Download 'https://api.github.com/repos/actions/deploy-pages/tarball/d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e' to '/home/runner/work/_actions/_temp_dcd7424f-c703-4644-bf74-2900d345770c/6a496b89-6429-41a6-ade2-de612bcd9769.tar.gz'
+2026-01-07T03:39:05.2547891Z ##[debug]Unwrap 'actions-deploy-pages-d6db901' to '/home/runner/work/_actions/actions/deploy-pages/v4'
+2026-01-07T03:39:05.2699652Z ##[debug]Archive '/home/runner/work/_actions/_temp_dcd7424f-c703-4644-bf74-2900d345770c/6a496b89-6429-41a6-ade2-de612bcd9769.tar.gz' has been unzipped into '/home/runner/work/_actions/actions/deploy-pages/v4'.
+2026-01-07T03:39:05.2808898Z ##[debug]action.yml for action: '/home/runner/work/_actions/actions/deploy-pages/v4/action.yml'.
+2026-01-07T03:39:05.3541387Z ##[debug]Set step 'deployment' display name to: 'Deploy to GitHub Pages'
+2026-01-07T03:39:05.3544007Z Complete job name: deploy
+2026-01-07T03:39:05.3554456Z ##[debug]Collect running processes for tracking orphan processes.
+2026-01-07T03:39:05.3777467Z ##[debug]Finishing: Set up job
+2026-01-07T03:39:05.3988197Z ##[debug]Evaluating condition for step: 'Deploy to GitHub Pages'
+2026-01-07T03:39:05.4030354Z ##[debug]Evaluating: success()
+2026-01-07T03:39:05.4036394Z ##[debug]Evaluating success:
+2026-01-07T03:39:05.4053049Z ##[debug]=> true
+2026-01-07T03:39:05.4060109Z ##[debug]Result: true
+2026-01-07T03:39:05.4084616Z ##[debug]Starting: Deploy to GitHub Pages
+2026-01-07T03:39:05.4201043Z ##[debug]Loading inputs
+2026-01-07T03:39:05.4213221Z ##[debug]Evaluating: github.token
+2026-01-07T03:39:05.4214378Z ##[debug]Evaluating Index:
+2026-01-07T03:39:05.4216403Z ##[debug]..Evaluating github:
+2026-01-07T03:39:05.4217986Z ##[debug]..=> Object
+2026-01-07T03:39:05.4223690Z ##[debug]..Evaluating String:
+2026-01-07T03:39:05.4224541Z ##[debug]..=> 'token'
+2026-01-07T03:39:05.4229083Z ##[debug]=> '***'
+2026-01-07T03:39:05.4230815Z ##[debug]Result: '***'
+2026-01-07T03:39:05.4238877Z ##[debug]Loading env
+2026-01-07T03:39:05.4310456Z ##[group]Run actions/deploy-pages@v4
+2026-01-07T03:39:05.4311182Z with:
+2026-01-07T03:39:05.4311797Z   token: ***
+2026-01-07T03:39:05.4312344Z   timeout: 600000
+2026-01-07T03:39:05.4312733Z   error_count: 10
+2026-01-07T03:39:05.4313125Z   reporting_interval: 5000
+2026-01-07T03:39:05.4313591Z   artifact_name: github-pages
+2026-01-07T03:39:05.4314040Z   preview: false
+2026-01-07T03:39:05.4314680Z ##[endgroup]
+2026-01-07T03:39:05.6662326Z ##[debug]all variables are set
+2026-01-07T03:39:05.6663567Z ##[debug]all variables are set
+2026-01-07T03:39:05.6665423Z ##[debug]ID token url is https://run-actions-2-azure-eastus.actions.githubusercontent.com/147//idtoken/92f7f577-d0ac-43ba-91b1-0c042f51d7bd/243ab25a-0bd8-5485-b2a1-6acdd1d0a673?api-version=2.0
+2026-01-07T03:39:05.8486866Z ::add-mask::***
+2026-01-07T03:39:05.8489595Z ##[debug]Actor: Dawn6666666
+2026-01-07T03:39:05.8490397Z ##[debug]Action ID: deployment
+2026-01-07T03:39:05.8491214Z ##[debug]Actions Workflow Run ID: 20748276764
+2026-01-07T03:39:05.8492450Z Fetching artifact metadata for "github-pages" in this workflow run
+2026-01-07T03:39:05.8504738Z ##[debug]Workflow Run Backend ID: 92f7f577-d0ac-43ba-91b1-0c042f51d7bd
+2026-01-07T03:39:05.8506955Z ##[debug]Workflow Job Run Backend ID: 243ab25a-0bd8-5485-b2a1-6acdd1d0a673
+2026-01-07T03:39:05.8513005Z ##[debug][Request] ListArtifacts https://results-receiver.actions.githubusercontent.com/twirp/github.actions.results.api.v1.ArtifactService/ListArtifacts
+2026-01-07T03:39:05.9922731Z ##[debug][Response] - 200
+2026-01-07T03:39:05.9923845Z ##[debug]Headers: {
+2026-01-07T03:39:05.9924420Z ##[debug]  "content-length": "337",
+2026-01-07T03:39:05.9925084Z ##[debug]  "content-type": "application/json",
+2026-01-07T03:39:05.9925814Z ##[debug]  "date": "Wed, 07 Jan 2026 03:39:05 GMT",
+2026-01-07T03:39:05.9926522Z ##[debug]  "x-github-backend": "Kubernetes",
+2026-01-07T03:39:05.9927323Z ##[debug]  "x-github-request-id": "FC12:2FD00D:D70453:10B6275:695DD559"
+2026-01-07T03:39:05.9928103Z ##[debug]}
+2026-01-07T03:39:05.9928874Z ##[debug]Body: {
+2026-01-07T03:39:05.9929345Z ##[debug]  "artifacts": [
+2026-01-07T03:39:05.9929872Z ##[debug]    {
+2026-01-07T03:39:05.9930553Z ##[debug]      "workflow_run_backend_id": "17d2bd89-cf3a-4581-a562-47bebc4ce9f5",
+2026-01-07T03:39:05.9931620Z ##[debug]      "workflow_job_run_backend_id": "c536bb83-47c8-5098-be8a-242779b0003c",
+2026-01-07T03:39:05.9932778Z ##[debug]      "database_id": "5036416408",
+2026-01-07T03:39:05.9933501Z ##[debug]      "name": "github-pages",
+2026-01-07T03:39:05.9934453Z ##[debug]      "size": "12129716",
+2026-01-07T03:39:05.9935228Z ##[debug]      "created_at": "2026-01-06T12:28:09Z",
+2026-01-07T03:39:05.9936725Z ##[debug]      "digest": "sha256:566344396cef78dd3528b6b3f560b254ca59d32d3cc34dab1b5b6ff83e11050b"
+2026-01-07T03:39:05.9937917Z ##[debug]    }
+2026-01-07T03:39:05.9938647Z ##[debug]  ]
+2026-01-07T03:39:05.9939061Z ##[debug]}
+2026-01-07T03:39:05.9939562Z Found 1 artifact(s)
+2026-01-07T03:39:05.9940311Z ##[debug]List artifact count: 1
+2026-01-07T03:39:05.9941841Z ##[debug]Artifact: {"name":"github-pages","id":5036416408,"size":12129716,"createdAt":"2026-01-06T12:28:09.000Z"}
+2026-01-07T03:39:05.9948501Z Creating Pages deployment with payload:
+2026-01-07T03:39:05.9949332Z {
+2026-01-07T03:39:05.9949731Z 	"artifact_id": 5036416408,
+2026-01-07T03:39:05.9950362Z 	"pages_build_version": "0b303b05ed2b28f353b22555e93442fe19890e94",
+2026-01-07T03:39:05.9996811Z 	"oidc_token": "***"
+2026-01-07T03:39:05.9997292Z }
+2026-01-07T03:39:06.2854897Z Created deployment for 0b303b05ed2b28f353b22555e93442fe19890e94, ID: 0b303b05ed2b28f353b22555e93442fe19890e94
+2026-01-07T03:39:06.2863174Z ##[debug]{"id":"0b303b05ed2b28f353b22555e93442fe19890e94","page_url":"https://dawn6666666.github.io/yunfeiyang-official-site/","status_url":"https://api.github.com/repos/Dawn6666666/yunfeiyang-official-site/pages/deployment/status/0b303b05ed2b28f353b22555e93442fe19890e94","preview_url":""}
+2026-01-07T03:39:11.2878402Z Getting Pages deployment status...
+2026-01-07T03:39:11.4940669Z Reported success!
+2026-01-07T03:39:11.5078758Z ##[debug]Node Action run completed with exit code 0
+2026-01-07T03:39:11.5134673Z ##[debug]Set output page_url = https://dawn6666666.github.io/yunfeiyang-official-site/
+2026-01-07T03:39:11.5135769Z ##[debug]Set output status = succeed
+2026-01-07T03:39:11.5141741Z ##[debug]Finishing: Deploy to GitHub Pages
+2026-01-07T03:39:11.5187438Z ##[debug]Starting: Complete job
+2026-01-07T03:39:11.5189427Z Evaluate and set environment url
+2026-01-07T03:39:11.5193435Z ##[debug]Evaluating: steps.deployment.outputs.page_url
+2026-01-07T03:39:11.5193876Z ##[debug]Evaluating Index:
+2026-01-07T03:39:11.5194189Z ##[debug]..Evaluating Index:
+2026-01-07T03:39:11.5194474Z ##[debug]....Evaluating Index:
+2026-01-07T03:39:11.5194768Z ##[debug]......Evaluating steps:
+2026-01-07T03:39:11.5195116Z ##[debug]......=> Object
+2026-01-07T03:39:11.5195468Z ##[debug]......Evaluating String:
+2026-01-07T03:39:11.5195765Z ##[debug]......=> 'deployment'
+2026-01-07T03:39:11.5196143Z ##[debug]....=> Object
+2026-01-07T03:39:11.5196436Z ##[debug]....Evaluating String:
+2026-01-07T03:39:11.5196711Z ##[debug]....=> 'outputs'
+2026-01-07T03:39:11.5196986Z ##[debug]..=> Object
+2026-01-07T03:39:11.5197260Z ##[debug]..Evaluating String:
+2026-01-07T03:39:11.5197536Z ##[debug]..=> 'page_url'
+2026-01-07T03:39:11.5198053Z ##[debug]=> 'https://dawn6666666.github.io/yunfeiyang-official-site/'
+2026-01-07T03:39:11.5198626Z ##[debug]Result: 'https://dawn6666666.github.io/yunfeiyang-official-site/'
+2026-01-07T03:39:11.5199594Z Evaluated environment url: https://dawn6666666.github.io/yunfeiyang-official-site/
+2026-01-07T03:39:11.5201104Z Uploading runner diagnostic logs
+2026-01-07T03:39:11.5212825Z ##[debug]Starting diagnostic file upload.
+2026-01-07T03:39:11.5213210Z ##[debug]Setting up diagnostic log folders.
+2026-01-07T03:39:11.5215274Z ##[debug]Creating diagnostic log files folder.
+2026-01-07T03:39:11.5223372Z ##[debug]Copying 1 worker diagnostic logs.
+2026-01-07T03:39:11.5231139Z ##[debug]Copying 1 runner diagnostic logs.
+2026-01-07T03:39:11.5232549Z ##[debug]Zipping diagnostic files.
+2026-01-07T03:39:11.5297506Z ##[debug]Uploading diagnostic metadata file.
+2026-01-07T03:39:11.5329185Z ##[debug]Diagnostic file upload complete.
+2026-01-07T03:39:11.5329862Z Completed runner diagnostic log upload
+2026-01-07T03:39:11.5330180Z Cleaning up orphan processes
+2026-01-07T03:39:11.5601328Z ##[debug]Finishing: Complete job
+2026-01-07T03:39:11.5631608Z ##[debug]Finishing: deploy

@@ -10,6 +10,7 @@ export default defineNuxtConfig({
   },
 
   app: {
+    baseURL: process.env.NODE_ENV === 'production' ? '/yunfeiyang-official-site/' : '/',
     head: {
       title: '云飞扬社团 | We Code the Future',
       meta: [
