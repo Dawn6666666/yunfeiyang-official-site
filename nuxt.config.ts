@@ -5,7 +5,12 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
-      gaId: process.env.NUXT_PUBLIC_GA_ID || 'G-PLACEHOLDER'
+      gaId: process.env.NUXT_PUBLIC_GA_ID || 'G-PLACEHOLDER',
+      emailjs: {
+        serviceId: '', // Overridden by NUXT_PUBLIC_EMAILJS_SERVICE_ID
+        templateId: '', // Overridden by NUXT_PUBLIC_EMAILJS_TEMPLATE_ID
+        publicKey: ''   // Overridden by NUXT_PUBLIC_EMAILJS_PUBLIC_KEY
+      }
     }
   },
 

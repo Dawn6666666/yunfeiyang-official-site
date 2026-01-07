@@ -192,10 +192,10 @@ const handleSubmit = async () => {
     }
 
     await emailjs.send(
-      'service_v8r8zcm',
-      'template_un1jzsr',
+      config.public.emailjs.serviceId,
+      config.public.emailjs.templateId,
       templateParams,
-      'ug2f__29OIaIFUHV7'
+      config.public.emailjs.publicKey
     )
     
     submitStatus.value = { type: 'success', message: '申请发送成功！我们会尽快联系你。' }
