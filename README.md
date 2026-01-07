@@ -4,6 +4,9 @@
 
 ![Preview](https://yunfeiyang.club/og-image.png)
 
+### 🔗 在线演示 (Live Demo)
+👉 **[https://dawn6666666.github.io/yunfeiyang-official-site/](https://dawn6666666.github.io/yunfeiyang-official-site/)**
+
 ## 🚀 项目概览
 
 这是 **云飞扬 (Yun Fei Yang / YFY)** 的官方网站。云飞扬是一个成立于 2014 年的学生科技社团。本网站旨在展示我们的项目、成就以及技术文化。
