@@ -21,7 +21,7 @@
         tabindex="0"
       >
         <div class="cert-card__img-box">
-          <img :src="cert.image" :alt="cert.title" loading="lazy" />
+          <img :src="resolvePath(cert.image)" :alt="cert.title" loading="lazy" />
           <div class="cert-card__overlay">
             <span class="cert-card__action">View</span>
           </div>
@@ -43,7 +43,7 @@
         tabindex="-1"
       >
         <div class="cert-card__img-box">
-          <img :src="cert.image" :alt="cert.title" loading="lazy" />
+          <img :src="resolvePath(cert.image)" :alt="cert.title" loading="lazy" />
           <div class="cert-card__overlay">
             <span class="cert-card__action">View</span>
           </div>
@@ -90,6 +90,15 @@ const CARD_WIDTH = 300 // 280px + 20px gap
 let lastScrollY = 0
 let scrollVelocity = 0
 let velocityTimeout: ReturnType<typeof setTimeout>
+
+const config = useRuntimeConfig()
+const resolvePath = (path: string) => {
+  if (!path) return ''
+  if (path.startsWith('http')) return path
+  // Remove leading slash to avoid double slash if baseURL ends with slash
+  const cleanPath = path.startsWith('/') ? path.slice(1) : path
+  return `${config.app.baseURL}${cleanPath}`
+}
 
 const openModal = (cert: typeof certsData[0]) => {
   selectedCert.value = cert

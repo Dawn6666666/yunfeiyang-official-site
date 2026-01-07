@@ -29,7 +29,7 @@
         <div class="join__fast-track">
           <div class="qr-card">
             <div class="qr-wrapper">
-              <img src="/images/qr-group.png" alt="迎新群二维码" class="qr-img" />
+              <img :src="resolvePath('/images/qr-group.png')" alt="迎新群二维码" class="qr-img" />
             </div>
             <div class="qr-info">
               <h4 class="qr-title">QQ扫码加入迎新群</h4>
@@ -129,6 +129,14 @@ import { useScrollReveal } from '@/composables/useScrollReveal'
 
 const sectionRef = ref(null)
 useScrollReveal(sectionRef)
+
+const config = useRuntimeConfig()
+const resolvePath = (path: string) => {
+  if (!path) return ''
+  if (path.startsWith('http')) return path
+  const cleanPath = path.startsWith('/') ? path.slice(1) : path
+  return `${config.app.baseURL}${cleanPath}`
+}
 
 // --- Form Logic ---
 const form = reactive({
