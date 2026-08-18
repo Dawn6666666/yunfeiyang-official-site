@@ -17,7 +17,7 @@ import '@/assets/css/blueprint.css'
 import '@fontsource/inter/400.css'
 
 const title = '云飞扬社团 | We Code the Future'
-const description = '成立于2014年的学生科技社团，专注于云计算、AI与现代软件开发。'
+const description = '成立于2014年的学生科技社团，专注于人工智能、智能云物联与现代软件工程。'
 const url = 'https://yunfeiyang.club'
 const image = 'https://yunfeiyang.club/og-image.png'
 

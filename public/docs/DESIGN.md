@@ -513,24 +513,32 @@ Tech 章节承接 About 的“价值观”，负责展示**“硬实力”与“
 
 核心叙事：**"We don't just learn languages. We master domains."**
 
-### 11.2 信息分组策略：三大技术赛道 (The 3 Tracks)
+### 11.2 信息分组策略：五大专业技术方向
 
-我们将技术栈重新封装为三个核心领域，每个领域代表一种成长路径：
+#### Track 1: 人工智能 (Artificial Intelligence)
+*   **定位**：探索大模型与计算机视觉前沿，构建落地智能系统。
+*   **关键词**：LLM, Deep Learning, Agents, Computer Vision.
+*   **成长目标**：AI 工程师.
 
-#### Track 1: Cloud Native (基础设施)
-*   **定位**：The Backbone. 构建高可用、可扩展的数字基座。
-*   **关键词**：Kubernetes, Docker, Go, Microservices.
-*   **成长目标**：成为系统架构师 (System Architect).
+#### Track 2: 软工智能 (Intelligent Software Dev)
+*   **定位**：融合软件工程与 AI 智能体，打造下一代应用系统。
+*   **关键词**：AI Agents, Full-Stack, Modern SE, LLM Apps.
+*   **成长目标**：智能软件工程师.
 
-#### Track 2: Intelligence (AI & LLM)
-*   **定位**：The Frontier. 探索生成式 AI 的应用边界。
-*   **关键词**：Transformers, RAG, PyTorch, Agents.
-*   **成长目标**：成为 AI 工程师 (AI Engineer).
+#### Track 3: 数据库 (Database Technology)
+*   **定位**：深耕主流与国产分布式数据库，掌握高并发与性能调优。
+*   **关键词**：Distributed DB, openGauss, NoSQL, Data Governance.
+*   **成长目标**：数据库架构师.
 
-#### Track 3: Modern Engineering (全栈/软件工程)
-*   **定位**：The Craft. 打造极致体验与优雅代码。
-*   **关键词**：Next.js, Rust, Design Systems, Performance.
-*   **成长目标**：成为全栈创造者 (Full-stack Maker).
+#### Track 4: 智能云物联 (Intelligent Cloud & IoT)
+*   **定位**：打通端边云协同，融合嵌入式开发与物联网云平台。
+*   **关键词**：Edge & Cloud, IoT Protocols, Embedded, Cloud Native.
+*   **成长目标**：云物联架构师.
+
+#### Track 5: 工业数智化 (Industrial Digital Intelligence)
+*   **定位**：软硬件结合赋能工业 4.0，深耕工业软件与智能控制。
+*   **关键词**：Industrial SE, PLC & Control, Smart Factory, Digital Twin.
+*   **成长目标**：工业数智化专家.
 
 ### 11.3 结构与顺序
 
@@ -538,24 +546,15 @@ Tech 章节承接 About 的“价值观”，负责展示**“硬实力”与“
 ┌─────────────────────────────────────────┐
 │  Section Header                         │
 │  "Tech Tracks."                         │
-│  Sub: "Find your path."                 │
+│  Sub: "软件工程专业核心方向。"              │
 └─────────────────────────────────────────┘
            ↓
 ┌─────────────────────────────────────────┐
-│  Card 1: Cloud Native                   │
-│  [Icon/Abstract Shape]                  │
-│  [Title] + [Keywords]                   │
-│  [Outcome Description]                  │
-└─────────────────────────────────────────┘
-           ↓
-┌─────────────────────────────────────────┐
-│  Card 2: Intelligence (AI)              │
-│  ...                                    │
-└─────────────────────────────────────────┘
-           ↓
-┌─────────────────────────────────────────┐
-│  Card 3: Modern Engineering             │
-│  ...                                    │
+│  Card 1: 人工智能                        │
+│  Card 2: 软工智能                        │
+│  Card 3: 数据库                          │
+│  Card 4: 智能云物联                      │
+│  Card 5: 工业数智化                      │
 └─────────────────────────────────────────┘
 ```
 

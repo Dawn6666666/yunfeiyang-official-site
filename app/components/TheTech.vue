@@ -14,103 +14,103 @@
       <!-- Grid (Staggered Reveal) -->
       <div class="track-grid reveal-stagger">
         
-        <!-- Track 1: Cloud Computing -->
+        <!-- Track 1: Artificial Intelligence -->
         <div class="track-card">
           <span class="track__number">01</span>
           <div class="track__content">
-            <h3 class="track__title">云计算</h3>
-            <p class="track__position">Cloud Computing</p>
-            <p class="track__desc">构建高可用、可扩展的云端基础设施，掌握容器化与微服务架构。</p>
+            <h3 class="track__title">人工智能</h3>
+            <p class="track__position">Artificial Intelligence</p>
+            <p class="track__desc">探索大模型与计算机视觉前沿，构建落地智能系统。</p>
             <div class="track__keywords">
-              <span>Kubernetes</span>
-              <span>Docker</span>
-              <span>Go</span>
-              <span>Microservices</span>
+              <span>LLM</span>
+              <span>Deep Learning</span>
+              <span>Agents</span>
+              <span>Computer Vision</span>
             </div>
           </div>
           <div class="track__footer">
             <span class="track__label">成长目标</span>
-            <span class="track__goal">云架构师</span>
+            <span class="track__goal">AI 工程师</span>
           </div>
         </div>
 
-        <!-- Track 2: Mobile App Dev -->
+        <!-- Track 2: Intelligent Software Dev -->
         <div class="track-card">
           <span class="track__number">02</span>
           <div class="track__content">
-            <h3 class="track__title">移动应用开发</h3>
-            <p class="track__position">Mobile App Development</p>
-            <p class="track__desc">打造极致体验的原生与跨平台移动应用，连接数字世界与指尖。</p>
+            <h3 class="track__title">软工智能</h3>
+            <p class="track__position">Intelligent Software Dev</p>
+            <p class="track__desc">融合软件工程与 AI 智能体，打造下一代应用系统。</p>
             <div class="track__keywords">
-              <span>Flutter</span>
-              <span>Swift</span>
-              <span>Kotlin</span>
-              <span>HarmonyOS</span>
+              <span>AI Agents</span>
+              <span>Full-Stack</span>
+              <span>Modern SE</span>
+              <span>LLM Apps</span>
             </div>
           </div>
           <div class="track__footer">
             <span class="track__label">成长目标</span>
-            <span class="track__goal">移动开发工程师</span>
+            <span class="track__goal">智能软件工程师</span>
           </div>
         </div>
 
-        <!-- Track 3: Intelligent Software -->
+        <!-- Track 3: Database Technology -->
         <div class="track-card">
           <span class="track__number">03</span>
           <div class="track__content">
-            <h3 class="track__title">智能软件开发</h3>
-            <p class="track__position">Intelligent Software</p>
-            <p class="track__desc">融合 AI 技术的下一代软件工程，探索大模型与智能体的应用落地。</p>
+            <h3 class="track__title">数据库</h3>
+            <p class="track__position">Database Technology</p>
+            <p class="track__desc">深耕主流与国产分布式数据库，掌握高并发与性能调优。</p>
             <div class="track__keywords">
-              <span>LLM</span>
-              <span>Agents</span>
-              <span>RAG</span>
-              <span>Python</span>
+              <span>Distributed DB</span>
+              <span>openGauss</span>
+              <span>NoSQL</span>
+              <span>Data Governance</span>
             </div>
           </div>
           <div class="track__footer">
             <span class="track__label">成长目标</span>
-            <span class="track__goal">AI 应用工程师</span>
+            <span class="track__goal">数据库架构师</span>
           </div>
         </div>
 
-        <!-- Track 4: Industrial Digital Intelligence -->
+        <!-- Track 4: Intelligent Cloud & IoT -->
         <div class="track-card">
           <span class="track__number">04</span>
           <div class="track__content">
-            <h3 class="track__title">工业数智化</h3>
-            <p class="track__position">Industrial Digital Intelligence</p>
-            <p class="track__desc">赋能传统工业的数字化转型，构建智慧城市与物联网解决方案。</p>
+            <h3 class="track__title">智能云物联</h3>
+            <p class="track__position">Intelligent Cloud & IoT</p>
+            <p class="track__desc">打通端边云协同，融合嵌入式开发与物联网云平台。</p>
             <div class="track__keywords">
-              <span>IoT</span>
-              <span>Digital Twin</span>
-              <span>Smart City</span>
-              <span>Industry 4.0</span>
+              <span>Edge & Cloud</span>
+              <span>IoT Protocols</span>
+              <span>Embedded</span>
+              <span>Cloud Native</span>
             </div>
           </div>
           <div class="track__footer">
             <span class="track__label">成长目标</span>
-            <span class="track__goal">IoT 解决方案专家</span>
+            <span class="track__goal">云物联架构师</span>
           </div>
         </div>
 
-        <!-- Track 5: Information Security -->
+        <!-- Track 5: Industrial Digital Intelligence -->
         <div class="track-card">
           <span class="track__number">05</span>
           <div class="track__content">
-            <h3 class="track__title">信息安全</h3>
-            <p class="track__position">Information Security</p>
-            <p class="track__desc">守护数字世界的安全边界，不仅是防御，更是对底层原理的深刻理解。</p>
+            <h3 class="track__title">工业数智化</h3>
+            <p class="track__position">Industrial Digital Intelligence</p>
+            <p class="track__desc">软硬件结合赋能工业 4.0，深耕工业软件与智能控制。</p>
             <div class="track__keywords">
-              <span>CTF</span>
-              <span>PenTesting</span>
-              <span>Cryptography</span>
-              <span>Network Sec</span>
+              <span>Industrial SE</span>
+              <span>PLC & Control</span>
+              <span>Smart Factory</span>
+              <span>Digital Twin</span>
             </div>
           </div>
           <div class="track__footer">
             <span class="track__label">成长目标</span>
-            <span class="track__goal">安全工程师</span>
+            <span class="track__goal">工业数智化专家</span>
           </div>
         </div>
 

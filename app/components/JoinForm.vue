@@ -95,11 +95,11 @@
             <label for="track">感兴趣的方向</label>
             <div class="select-wrapper">
               <select id="track" v-model="form.track">
-                <option value="cloud">云计算与后端 (Cloud & Backend)</option>
-                <option value="frontend">前端与移动开发 (Frontend & Mobile)</option>
-                <option value="ai">人工智能与大数据 (AI & Data Science)</option>
-                <option value="security">网络与信息安全 (Cybersecurity)</option>
-                <option value="iot">智能技术与嵌入式 (IoT & Embedded)</option>
+                <option value="ai">人工智能</option>
+                <option value="se_ai">软工智能</option>
+                <option value="database">数据库</option>
+                <option value="iot">智能云物联</option>
+                <option value="industry">工业数智化</option>
               </select>
               <svg class="select-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
             </div>
@@ -155,16 +155,16 @@ const resolvePath = (path: string) => {
 const form = reactive({
   name: '',
   email: '',
-  track: 'cloud',
+  track: 'ai',
   intro: ''
 })
 
 const trackMap = {
-  cloud: '云计算与后端 (Cloud & Backend)',
-  frontend: '前端与移动开发 (Frontend & Mobile)',
-  ai: '人工智能与大数据 (AI & Data Science)',
-  security: '网络与信息安全 (Cybersecurity)',
-  iot: '智能技术与嵌入式 (IoT & Embedded)'
+  ai: '人工智能',
+  se_ai: '软工智能',
+  database: '数据库',
+  iot: '智能云物联',
+  industry: '工业数智化'
 }
 
 const errors = reactive({

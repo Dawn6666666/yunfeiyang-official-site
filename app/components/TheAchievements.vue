@@ -20,20 +20,20 @@
         <div class="impact-col impact-col--soil">
           <h3 class="col-title">The Soil</h3>
           <div class="project-list" @mousemove="handleMouseMove">
-            <a href="https://intellibuddy-puce.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-item">
+            <a href="https://intellibuddy.luck007.online/" target="_blank" rel="noopener noreferrer" class="project-item">
               <div class="project-head">
                 <span class="project-name">智教虚拟化平台</span>
                 <span class="project-stat">Deployed</span>
               </div>
               <p class="project-desc">智能教育结合虚拟化平台，已投入使用。</p>
             </a>
-            <div class="project-item">
+            <a href="https://zht.makeup/" target="_blank" rel="noopener noreferrer" class="project-item">
               <div class="project-head">
                 <span class="project-name">云上智慧路灯</span>
                 <span class="project-stat">IoT</span>
               </div>
               <p class="project-desc">面向智慧城市的云上多功能路灯系统。</p>
-            </div>
+            </a>
             <div class="project-item">
               <div class="project-head">
                 <span class="project-name">数智云联</span>

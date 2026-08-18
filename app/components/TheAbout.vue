@@ -21,8 +21,8 @@
         </p>
         <p class="about__body-text">
           今天，我们致力于探索 
-          <span class="text-accent">云计算</span>、
-          <span class="text-accent">人工智能</span> 和 
+          <span class="text-accent">人工智能</span>、
+          <span class="text-accent">智能云物联</span> 和 
           <span class="text-accent">现代软件工程</span> 的边界。
         </p>
       </div>
