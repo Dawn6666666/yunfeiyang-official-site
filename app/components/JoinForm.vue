@@ -42,7 +42,7 @@
         <div class="join__fast-track">
           <div class="qr-card">
             <div class="qr-wrapper">
-              <img :src="resolvePath('/images/qr-group.png')" alt="迎新群二维码" class="qr-img" />
+              <img :src="resolvePath('/images/qr-group.svg')" alt="迎新群二维码" class="qr-img" />
             </div>
             <div class="qr-info">
               <h4 class="qr-title">QQ扫码加入迎新群</h4>
