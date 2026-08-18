@@ -2,7 +2,7 @@
   <section ref="heroRef" class="hero" :class="{ 'is-scrolling': isScrolling }">
     <!-- 背景层组件 -->
     <HeroBackground />
-    <SyntaxCloud />
+    <HeroSyntaxCloud />
 
     <!-- 主内容容器 (应用视差) -->
     <div class="hero__content">
@@ -33,7 +33,7 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 
 const heroRef = ref<HTMLElement | null>(null)
-const isLoaded = ref(false)
+const isLoaded = ref(true)
 const isScrolling = ref(false)
 const isReducedMotion = ref(false)
 
@@ -79,25 +79,11 @@ const handleMouseMove = (e: MouseEvent) => {
   heroRef.value.style.setProperty('--mouse-y', y.toString())
 }
 
-onMounted(async () => {
+onMounted(() => {
   // 检测减弱动画偏好
   const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
   isReducedMotion.value = mediaQuery.matches
   mediaQuery.addEventListener('change', (e) => isReducedMotion.value = e.matches)
-
-  // 字体检测
-  if (document.fonts) {
-    try {
-      await document.fonts.ready
-    } catch (e) {
-      console.warn('Font check skipped', e)
-    }
-  }
-
-  // 入场
-  requestAnimationFrame(() => {
-    isLoaded.value = true
-  })
 
   // 绑定事件
   window.addEventListener('scroll', handleScroll, { passive: true })

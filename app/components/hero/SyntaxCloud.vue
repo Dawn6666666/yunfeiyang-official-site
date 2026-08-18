@@ -1,14 +1,16 @@
 <template>
-  <div class="syntax-cloud">
-    <span 
-      v-for="(symbol, index) in symbols" 
-      :key="index"
-      class="syntax-symbol"
-      :style="getSymbolStyle(index)"
-    >
-      {{ symbol }}
-    </span>
-  </div>
+  <ClientOnly>
+    <div class="syntax-cloud">
+      <span 
+        v-for="(symbol, index) in symbols" 
+        :key="index"
+        class="syntax-symbol"
+        :style="getSymbolStyle(index)"
+      >
+        {{ symbol }}
+      </span>
+    </div>
+  </ClientOnly>
 </template>
 
 <script setup lang="ts">

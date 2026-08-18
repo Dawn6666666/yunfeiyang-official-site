@@ -1,9 +1,22 @@
 <template>
   <section id="join" class="join-section" ref="sectionRef">
+    <!-- Background Watermark Emblem -->
+    <div class="join__bg-watermark">
+      <TheLogo />
+    </div>
+
     <div class="join__container">
       
       <!-- Text Side -->
       <div class="join__content reveal">
+        <div class="join__brand-pill">
+          <div class="join__brand-icon">
+            <TheLogo />
+          </div>
+          <span class="join__brand-name">Yunfeiyang Club</span>
+          <span class="join__brand-badge">Est. 2014</span>
+        </div>
+
         <h2 class="join__title">Join the <br><span class="text-accent">Revolution.</span></h2>
         <p class="join__desc">
           我们在寻找充满激情的建设者、设计师和梦想家。
@@ -220,11 +233,32 @@ const handleSubmit = async () => {
   background: var(--bg);
   position: relative;
   z-index: 10;
+  overflow: hidden;
+}
+
+/* Background Watermark */
+.join__bg-watermark {
+  position: absolute;
+  right: -5%;
+  bottom: -10%;
+  width: 480px;
+  height: 480px;
+  pointer-events: none;
+  opacity: 0.04;
+  z-index: 0;
+  transform: rotate(-15deg);
+  transition: opacity 0.3s ease;
+}
+
+html.light-mode .join__bg-watermark {
+  opacity: 0.08;
 }
 
 .join__container {
   max-width: 1200px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
   
   /* 2K Optimization */
   @media (min-width: 1921px) {
@@ -235,6 +269,51 @@ const handleSubmit = async () => {
   grid-template-columns: 1fr 1fr;
   gap: var(--space-xl);
   align-items: center;
+}
+
+/* Brand Badge */
+.join__brand-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.35rem 0.85rem 0.35rem 0.45rem;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 9999px;
+  margin-bottom: var(--space-md);
+  box-shadow: 0 2px 8px -2px rgba(0, 0, 0, 0.06);
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.join__brand-pill:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.join__brand-icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.join__brand-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.875rem;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+
+.join__brand-badge {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--accent-glow);
+  padding: 0.15rem 0.45rem;
+  border-radius: 999px;
 }
 
 /* Content Side */

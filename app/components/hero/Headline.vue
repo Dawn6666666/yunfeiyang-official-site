@@ -26,6 +26,10 @@ defineProps<{
    主标题动效 (v2 Phase A Update)
    ───────────────────────────────────────────────────────── */
 
+.hero-headline-wrapper {
+  color: var(--text);
+}
+
 .hero__headline,
 .hero__subline {
   display: flex;
@@ -34,6 +38,7 @@ defineProps<{
   font-family: var(--font-display);
   font-weight: 700;
   line-height: 0.95;
+  color: var(--text);
   
   /* Create layer context for transforms */
   transform-style: flat;
@@ -57,77 +62,76 @@ defineProps<{
   will-change: transform;
 }
 
-/* "We" - 淡入 + 上滑 */
+/* "We" */
 .hero__we {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
-}
-
-.hero__we.animate {
+  color: var(--text);
+  -webkit-text-fill-color: var(--text);
   opacity: 1;
   transform: translateY(0);
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
 }
 
 /* "Code" - Shimmer Effect */
 .hero__code {
-  color: transparent;
-  -webkit-text-stroke: 2px var(--accent);
-  transition: opacity 0.4s;
-  
-  /* Fallback for no shimmer / pre-load */
   position: relative;
+  transition: opacity 0.4s;
 }
 
-/* Shimmer Definition */
-.hero__code--shimmer.animate {
-  -webkit-text-stroke: 0px transparent; /* Remove stroke when filled */
-  
-  /* Base color + Shimmer Overlay */
-  background-color: var(--text);
-  background-image: linear-gradient(
-    110deg, 
-    transparent 40%, 
-    rgba(255, 255, 255, 0.9) 50%, 
-    transparent 60%
+/* Shimmer Definition - Dark Mode Default */
+.hero__code--shimmer {
+  -webkit-text-stroke: 0px transparent;
+  background: linear-gradient(
+    90deg, 
+    var(--accent) 0%, 
+    #FFFFFF 50%, 
+    var(--accent) 100%
   );
-  background-size: 200% 100%;
-  background-repeat: no-repeat;
-  
-  /* Clip to text */
-  background-clip: text;
+  background-size: 200% auto;
   -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
-  
-  animation: shimmer-flow 4s infinite linear;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer-flow 3.5s linear infinite;
+}
+
+/* Shimmer Definition - Light Mode Vivid Orange */
+html.light-mode .hero__code--shimmer {
+  background: linear-gradient(
+    90deg, 
+    var(--accent) 0%, 
+    #C2410C 40%, 
+    #FB923C 60%, 
+    var(--accent) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
 }
 
 @keyframes shimmer-flow {
-  0% { background-position: 200% 0; }
-  100% { background-position: -200% 0; }
+  to {
+    background-position: 200% center;
+  }
 }
 
-/* "the" - Simple Fade */
+/* "the" */
 .hero__the {
-  opacity: 0;
+  opacity: 0.8;
   font-weight: 400;
-  color: var(--muted);
+  color: var(--text-muted);
+  -webkit-text-fill-color: var(--text-muted);
   font-size: 0.5em;
-  transition: opacity 0.3s ease 0.6s;
+  transition: opacity 0.3s ease;
 }
 
-.hero__the.animate {
-  opacity: 0.6;
-}
-
-/* "Future" - Mask Reveal */
+/* "Future" */
 .hero__future {
-  clip-path: inset(0 100% 0 0);
-  transition: clip-path 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.8s;
-}
-
-.hero__future.animate {
+  color: var(--text);
+  -webkit-text-fill-color: var(--text);
   clip-path: inset(0 0 0 0);
+  transition: clip-path 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 /* Reduced Motion Overrides */

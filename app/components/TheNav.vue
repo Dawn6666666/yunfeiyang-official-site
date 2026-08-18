@@ -101,11 +101,11 @@ onUnmounted(() => {
   font-size: 1.5rem;
   letter-spacing: -0.02em;
   color: var(--text);
+  -webkit-text-fill-color: var(--text);
   text-decoration: none;
-  padding: 0.75rem 0; /* Align with pill center conceptually */
-  transition: opacity 0.2s;
-  mix-blend-mode: difference; /* Ensure visibility on light/dark headers */
-  color: var(--bg); /* Inverted because of difference mode */
+  padding: 0.75rem 0;
+  transition: opacity 0.2s, transform 0.2s;
+  cursor: pointer;
 }
 
 /* Floating Pill */
@@ -139,7 +139,7 @@ onUnmounted(() => {
   border-color: rgba(255, 255, 255, 0.2);
 }
 
-:global(html.light-mode) .nav-pill:hover {
+html.light-mode .nav-pill:hover {
   border-color: var(--accent-glow);
   box-shadow: 
     0 4px 6px -1px rgba(0, 0, 0, 0.08),
@@ -157,6 +157,7 @@ onUnmounted(() => {
   font-size: 0.875rem;
   font-weight: 500;
   color: var(--text-muted);
+  -webkit-text-fill-color: var(--text-muted);
   padding: 0.5rem 1rem;
   border-radius: 999px;
   transition: all 0.2s ease;
@@ -164,6 +165,7 @@ onUnmounted(() => {
 
 .nav__link:hover {
   color: var(--text);
+  -webkit-text-fill-color: var(--text);
   background-color: var(--bg-elevated); /* Pill hover effect */
 }
 

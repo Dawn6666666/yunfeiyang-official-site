@@ -51,33 +51,23 @@ const scrollTo = (selector: string) => {
 .hero__subtitle {
   margin-top: var(--space-lg);
   font-size: clamp(0.875rem, 1.5vw, 1.125rem);
-  color: var(--muted);
+  color: var(--text-muted);
+  -webkit-text-fill-color: var(--text-muted);
   font-weight: 500;
   letter-spacing: 0.05em;
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.4s ease, transform 0.4s ease;
-  transition-delay: 1.4s;
-}
-
-.hero__subtitle.animate {
-  opacity: 1; /* Note: Parent opacity overrides this visually */
+  opacity: 1;
   transform: translateY(0);
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
 .hero__meta {
   margin-top: var(--space-sm);
   font-size: clamp(0.75rem, 1.2vw, 0.875rem);
-  color: var(--muted);
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.4s ease, transform 0.4s ease;
-  transition-delay: 1.6s;
-}
-
-.hero__meta.animate {
-  opacity: 0.7;
+  color: var(--text-muted);
+  -webkit-text-fill-color: var(--text-muted);
+  opacity: 0.85;
   transform: translateY(0);
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
 .hero__divider {
@@ -97,16 +87,10 @@ const scrollTo = (selector: string) => {
   margin-top: var(--space-md);
   display: flex;
   gap: var(--space-sm);
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.4s ease, transform 0.4s ease;
-  transition-delay: 1.8s;
-  pointer-events: auto; /* Ensure clickable */
-}
-
-.hero__cta.animate {
   opacity: 1;
   transform: translateY(0);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  pointer-events: auto; /* Ensure clickable */
 }
 
 .btn {
