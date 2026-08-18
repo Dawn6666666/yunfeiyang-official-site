@@ -33,7 +33,7 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 
 const heroRef = ref<HTMLElement | null>(null)
-const isLoaded = ref(true)
+const isLoaded = ref(false)
 const isScrolling = ref(false)
 const isReducedMotion = ref(false)
 
@@ -88,9 +88,24 @@ onMounted(() => {
   // 绑定事件
   window.addEventListener('scroll', handleScroll, { passive: true })
   window.addEventListener('mousemove', handleMouseMove, { passive: true })
-  
+
   // 初始化变量
   updateCssVariables()
+
+  // 入场：等字体就绪再触发，避免 FOUT 期间的字形跳动
+  // 加超时兜底，防止 fonts.ready 迟迟不 resolve 导致标题一直不可见
+  const fontsReady = document.fonts
+    ? Promise.race([
+        document.fonts.ready,
+        new Promise((resolve) => setTimeout(resolve, 1000)),
+      ]).catch(() => {})
+    : Promise.resolve()
+
+  fontsReady.then(() => {
+    requestAnimationFrame(() => {
+      isLoaded.value = true
+    })
+  })
 
   // Intersection Observer (保持兼容 Nav 状态)
   if (heroRef.value) {

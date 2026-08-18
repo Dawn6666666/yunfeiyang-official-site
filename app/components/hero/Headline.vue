@@ -62,28 +62,39 @@ defineProps<{
   will-change: transform;
 }
 
-/* "We" */
+/* "We" - 淡入 + 上滑 */
 .hero__we {
   color: var(--text);
   -webkit-text-fill-color: var(--text);
-  opacity: 1;
-  transform: translateY(0);
+  opacity: 0;
+  transform: translateY(20px);
   transition: opacity 0.4s ease-out, transform 0.4s ease-out;
 }
 
-/* "Code" - Shimmer Effect */
+.hero__we.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* "Code" - 紧随 "We" 入场 */
 .hero__code {
   position: relative;
-  transition: opacity 0.4s;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease-out 0.15s, transform 0.4s ease-out 0.15s;
+}
+
+.hero__code.animate {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Shimmer Definition - Dark Mode Default */
 .hero__code--shimmer {
-  -webkit-text-stroke: 0px transparent;
   background: linear-gradient(
-    90deg, 
-    var(--accent) 0%, 
-    #FFFFFF 50%, 
+    90deg,
+    var(--accent) 0%,
+    #FFFFFF 50%,
     var(--accent) 100%
   );
   background-size: 200% auto;
@@ -97,10 +108,10 @@ defineProps<{
 /* Shimmer Definition - Light Mode Vivid Orange */
 html.light-mode .hero__code--shimmer {
   background: linear-gradient(
-    90deg, 
-    var(--accent) 0%, 
-    #C2410C 40%, 
-    #FB923C 60%, 
+    90deg,
+    var(--accent) 0%,
+    #C2410C 40%,
+    #FB923C 60%,
     var(--accent) 100%
   );
   background-size: 200% auto;
@@ -116,34 +127,58 @@ html.light-mode .hero__code--shimmer {
   }
 }
 
-/* "the" */
+/* "the" - 延迟淡入 */
 .hero__the {
-  opacity: 0.8;
+  opacity: 0;
   font-weight: 400;
   color: var(--text-muted);
   -webkit-text-fill-color: var(--text-muted);
   font-size: 0.5em;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease 0.6s;
 }
 
-/* "Future" */
+.hero__the.animate {
+  opacity: 0.8;
+}
+
+/* "Future" - 遮罩揭示 */
 .hero__future {
   color: var(--text);
   -webkit-text-fill-color: var(--text);
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.8s;
+}
+
+.hero__future.animate {
   clip-path: inset(0 0 0 0);
-  transition: clip-path 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 /* Reduced Motion Overrides */
 @media (prefers-reduced-motion: reduce) {
-  .hero__headline, 
+  .hero__headline,
   .hero__subline {
     transform: none !important;
   }
-  
-  .hero__code--shimmer.animate {
+
+  /* 跳过入场编排，直接呈现终态 */
+  .hero__we,
+  .hero__code,
+  .hero__future {
+    opacity: 1;
+    transform: none;
+    clip-path: none;
+  }
+
+  .hero__the {
+    opacity: 0.8;
+  }
+
+  /* 取消扫光，改为纯色填充 */
+  .hero__code--shimmer {
     animation: none;
-    background: var(--text); /* Solid fill */
+    background: none;
+    color: var(--accent);
+    -webkit-text-fill-color: var(--accent);
   }
 }
 

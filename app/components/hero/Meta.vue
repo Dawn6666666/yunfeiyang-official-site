@@ -55,9 +55,14 @@ const scrollTo = (selector: string) => {
   -webkit-text-fill-color: var(--text-muted);
   font-weight: 500;
   letter-spacing: 0.05em;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease 1.4s, transform 0.4s ease 1.4s;
+}
+
+.hero__subtitle.animate {
   opacity: 1;
   transform: translateY(0);
-  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
 .hero__meta {
@@ -65,9 +70,14 @@ const scrollTo = (selector: string) => {
   font-size: clamp(0.75rem, 1.2vw, 0.875rem);
   color: var(--text-muted);
   -webkit-text-fill-color: var(--text-muted);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease 1.6s, transform 0.4s ease 1.6s;
+}
+
+.hero__meta.animate {
   opacity: 0.85;
   transform: translateY(0);
-  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
 .hero__divider {
@@ -87,10 +97,15 @@ const scrollTo = (selector: string) => {
   margin-top: var(--space-md);
   display: flex;
   gap: var(--space-sm);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease 1.8s, transform 0.4s ease 1.8s;
+  pointer-events: auto; /* Ensure clickable */
+}
+
+.hero__cta.animate {
   opacity: 1;
   transform: translateY(0);
-  transition: opacity 0.4s ease, transform 0.4s ease;
-  pointer-events: auto; /* Ensure clickable */
 }
 
 .btn {
@@ -138,6 +153,18 @@ const scrollTo = (selector: string) => {
 @media (prefers-reduced-motion: reduce) {
   .hero-meta-wrapper {
     opacity: 1; /* Disable scroll fade */
+  }
+
+  /* 跳过错峰入场，直接呈现终态 */
+  .hero__subtitle,
+  .hero__cta {
+    opacity: 1;
+    transform: none;
+  }
+
+  .hero__meta {
+    opacity: 0.85;
+    transform: none;
   }
 }
 
