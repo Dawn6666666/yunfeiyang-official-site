@@ -19,7 +19,7 @@ import '@fontsource/inter/400.css'
 const title = '云飞扬社团 | We Code the Future'
 const description = '成立于2014年的学生科技社团，专注于人工智能、智能云物联与现代软件工程。'
 const url = 'https://yunfeiyang.club'
-const image = 'https://yunfeiyang.club/og-image.png'
+const image = 'https://yunfeiyang.club/images/preview/home-preview.png'
 
 useSeoMeta({
   title,
@@ -45,7 +45,7 @@ useHead({
         '@type': 'Organization',
         name: '云飞扬社团 (Yun Fei Yang Club)',
         url: url,
-        logo: 'https://yunfeiyang.club/logo.png',
+        logo: 'https://yunfeiyang.club/images/logo/logo.png',
         foundingDate: '2014',
         slogan: 'We Code the Future',
         description: description,

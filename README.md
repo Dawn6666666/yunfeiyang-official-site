@@ -2,7 +2,7 @@
 
 > "We Code the Future" - 伟大的想法始于单行代码。
 
-![Preview](public/images/home-preview.png)
+![Preview](public/images/preview/home-preview.png)
 
 ### 🔗 在线演示 (Live Demo)
 👉 **[https://dawn6666666.github.io/yunfeiyang-official-site/](https://dawn6666666.github.io/yunfeiyang-official-site/)**
@@ -60,7 +60,7 @@ npm run preview
 ```
 
 详细的部署教程（包含 GitHub Pages, Vercel, Netlify 配置）请参阅：
-👉 **[部署指南 (DEPLOY.md)](public/docs/DEPLOY.md)**
+👉 **[部署指南 (DEPLOY.md)](public/docs/archive/DEPLOY.md)**
 
 ## 📁 项目结构
 
@@ -68,7 +68,8 @@ npm run preview
 - `app/composables`: 共享逻辑 (`useTheme`, `useScrollReveal` 等)
 - `app/assets/css`: 全局样式与变量 (`main.css`)
 - `content`: 静态数据源 (JSON 格式)
-- `public`: 静态资源 (图片, 图标等)
+- `public/docs`: 项目规范与社团资料文档
+- `public/images`: 静态图片资源 (按 logo, certs, posters, preview, qr 分类)
 
 ## 📄 许可证
 
